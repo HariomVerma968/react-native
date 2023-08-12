@@ -1,0 +1,81 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/apple/Desktop/unpadh/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "map": [
+                {
+                    "source": "/Users/apple/Library/Android/sdk/caches/transforms-3/527c58d4e2fb96360b9aa33718f25d12/transformed/jetified-checkout-1.6.34/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,93",
+                        "endLines": "2,13",
+                        "endColumns": "37,12",
+                        "endOffsets": "88,745"
+                    },
+                    "to": {
+                        "startLines": "2,26",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,1539",
+                        "endLines": "2,36",
+                        "endColumns": "37,12",
+                        "endOffsets": "88,2191"
+                    }
+                },
+                {
+                    "source": "/Users/apple/Library/Android/sdk/caches/transforms-3/3db1a12217f8e17d83b631796e808198/transformed/material-1.1.0/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,115,185,256,328,386,444,553,617,673,732,795",
+                        "endLines": "2,3,4,5,6,7,9,10,11,12,13,17",
+                        "endColumns": "59,69,70,71,57,57,10,63,55,58,62,10",
+                        "endOffsets": "110,180,251,323,381,439,548,612,668,727,790,962"
+                    },
+                    "to": {
+                        "startLines": "11,12,13,14,15,16,17,19,20,21,25,37",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "649,709,779,850,922,980,1038,1147,1211,1267,1476,2196",
+                        "endLines": "11,12,13,14,15,16,18,19,20,21,25,40",
+                        "endColumns": "59,69,70,71,57,57,10,63,55,58,62,10",
+                        "endOffsets": "704,774,845,917,975,1033,1142,1206,1262,1321,1534,2363"
+                    }
+                },
+                {
+                    "source": "/Users/apple/Library/Android/sdk/caches/transforms-3/b4b1b9d384c0c72e25d796b0876e3be9/transformed/appcompat-1.4.1/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,124,193,263,337,413,472,543",
+                        "endColumns": "68,68,69,73,75,58,70,67",
+                        "endOffsets": "119,188,258,332,408,467,538,606"
+                    },
+                    "to": {
+                        "startLines": "3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "93,162,231,301,375,451,510,581",
+                        "endColumns": "68,68,69,73,75,58,70,67",
+                        "endOffsets": "157,226,296,370,446,505,576,644"
+                    }
+                },
+                {
+                    "source": "/Users/apple/Desktop/unpadh/node_modules/react-native-bottomsheet/android/build/intermediates/packaged_res/debug/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,101,153",
+                        "endColumns": "45,51,51",
+                        "endOffsets": "96,148,200"
+                    },
+                    "to": {
+                        "startLines": "22,23,24",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "1326,1372,1424",
+                        "endColumns": "45,51,51",
+                        "endOffsets": "1367,1419,1471"
+                    }
+                }
+            ]
+        }
+    ]
+}

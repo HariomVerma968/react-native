@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "497908468088",
+    "project_id": "unpadsocial-2f492",
+    "storage_bucket": "unpadsocial-2f492.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:497908468088:android:b6c8540d70ba9dcff0608d",
+        "android_client_info": {
+          "package_name": "com.theunpadh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "497908468088-bucfmoop5sg6le3r264ht2if02c25678.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.theunpadh",
+            "certificate_hash": "6d15b6e00aa7dcda39cd822cef80fd0abcbb6d0e"
+          }
+        },
+        {
+          "client_id": "497908468088-5uos9mv4fe3s0mnmurh03fkrcga7b20m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVNgnQxNNiYXydeYIo46PyyWktIOUUcwk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "497908468088-1h5gtk44hk2paaiki693vh331da5hj6h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

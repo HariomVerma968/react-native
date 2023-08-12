@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Rukkor</string>
+
+    <string name="facebook_app_id">1308142836785759</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">f307e7e620cc7e8426000b1aba138321</string>
+</resources>

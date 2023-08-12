@@ -1,0 +1,749 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.theunpadh"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="30" />
+10
+11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+11-->/Users/apple/Desktop/unpadh/android/app/src/debug/AndroidManifest.xml:5:5-77
+11-->/Users/apple/Desktop/unpadh/android/app/src/debug/AndroidManifest.xml:5:22-75
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:3:5-67
+12-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:3:22-64
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:4:1-75
+13-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:4:18-72
+14    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+14-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:5:1-76
+14-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:5:18-73
+15    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+15-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:6:7-83
+15-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:6:24-80
+16    <uses-permission android:name="android.permission.CAMERA" />
+16-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:7:5-65
+16-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:7:22-62
+17
+18    <uses-feature android:name="android.hardware.camera" />
+18-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:8:5-60
+18-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:8:19-57
+19    <uses-feature android:name="android.hardware.camera.autofocus" />
+19-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:9:1-66
+19-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:9:15-63
+20
+21    <uses-permission android:name="android.permission.BLUETOOTH" /> <!-- for Device Name -->
+21-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:10:1-63
+21-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:10:18-61
+22    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+22-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:11:1-70
+22-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:11:18-68
+23    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+23-->[com.facebook.flipper:flipper:0.99.0] /Users/apple/Library/Android/sdk/caches/transforms-3/75f3e0178cebf050863bd2473758d735/transformed/jetified-flipper-0.99.0/AndroidManifest.xml:16:5-76
+23-->[com.facebook.flipper:flipper:0.99.0] /Users/apple/Library/Android/sdk/caches/transforms-3/75f3e0178cebf050863bd2473758d735/transformed/jetified-flipper-0.99.0/AndroidManifest.xml:16:22-73
+24    <uses-permission android:name="android.permission.WAKE_LOCK" />
+24-->[:react-native-firebase_auth] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/auth/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-68
+24-->[:react-native-firebase_auth] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/auth/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-65
+25
+26    <queries>
+26-->[:react-native-image-crop-picker] /Users/apple/Desktop/unpadh/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-13:15
+27        <intent>
+27-->[:react-native-image-crop-picker] /Users/apple/Desktop/unpadh/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-12:18
+28            <action android:name="android.media.action.IMAGE_CAPTURE" />
+28-->[:react-native-image-crop-picker] /Users/apple/Desktop/unpadh/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-73
+28-->[:react-native-image-crop-picker] /Users/apple/Desktop/unpadh/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:21-70
+29        </intent>
+30        <intent>
+30-->[com.razorpay:checkout:1.6.34] /Users/apple/Library/Android/sdk/caches/transforms-3/527c58d4e2fb96360b9aa33718f25d12/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:11:9-17:18
+31            <action android:name="android.intent.action.VIEW" />
+31-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:60:9-61
+31-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:60:17-58
+32
+33            <data
+33-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:63:9-67
+34                android:mimeType="*/*"
+35                android:scheme="*" />
+35-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:63:15-64
+36        </intent>
+37        <intent>
+37-->[com.razorpay:checkout:1.6.34] /Users/apple/Library/Android/sdk/caches/transforms-3/527c58d4e2fb96360b9aa33718f25d12/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:18:9-27:18
+38            <action android:name="android.intent.action.VIEW" />
+38-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:60:9-61
+38-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:60:17-58
+39
+40            <category android:name="android.intent.category.BROWSABLE" />
+40-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:62:9-70
+40-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:62:19-67
+41
+42            <data
+42-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:63:9-67
+43                android:host="pay"
+44                android:mimeType="*/*"
+45                android:scheme="upi" />
+45-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:63:15-64
+46        </intent>
+47        <intent>
+47-->[com.razorpay:checkout:1.6.34] /Users/apple/Library/Android/sdk/caches/transforms-3/527c58d4e2fb96360b9aa33718f25d12/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:28:9-30:18
+48            <action android:name="android.intent.action.MAIN" />
+48-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:45:13-65
+48-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:45:21-62
+49        </intent>
+50        <intent>
+50-->[com.razorpay:checkout:1.6.34] /Users/apple/Library/Android/sdk/caches/transforms-3/527c58d4e2fb96360b9aa33718f25d12/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:31:9-35:18
+51            <action android:name="android.intent.action.SEND" />
+51-->[com.razorpay:checkout:1.6.34] /Users/apple/Library/Android/sdk/caches/transforms-3/527c58d4e2fb96360b9aa33718f25d12/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:32:13-65
+51-->[com.razorpay:checkout:1.6.34] /Users/apple/Library/Android/sdk/caches/transforms-3/527c58d4e2fb96360b9aa33718f25d12/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:32:21-62
+52
+53            <data android:mimeType="*/*" />
+53-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:63:9-67
+54        </intent>
+55        <intent>
+55-->[com.razorpay:checkout:1.6.34] /Users/apple/Library/Android/sdk/caches/transforms-3/527c58d4e2fb96360b9aa33718f25d12/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:36:9-38:18
+56            <action android:name="rzp.device_token.share" />
+56-->[com.razorpay:checkout:1.6.34] /Users/apple/Library/Android/sdk/caches/transforms-3/527c58d4e2fb96360b9aa33718f25d12/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:37:13-61
+56-->[com.razorpay:checkout:1.6.34] /Users/apple/Library/Android/sdk/caches/transforms-3/527c58d4e2fb96360b9aa33718f25d12/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:37:21-58
+57        </intent>
+58    </queries>
+59
+60    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+60-->[com.google.firebase:firebase-messaging:23.1.2] /Users/apple/Library/Android/sdk/caches/transforms-3/3fdac1b3bfd13a9ff7f9f5b8354047dc/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:25:5-77
+60-->[com.google.firebase:firebase-messaging:23.1.2] /Users/apple/Library/Android/sdk/caches/transforms-3/3fdac1b3bfd13a9ff7f9f5b8354047dc/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:25:22-74
+61    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+61-->[com.google.firebase:firebase-messaging:23.1.2] /Users/apple/Library/Android/sdk/caches/transforms-3/3fdac1b3bfd13a9ff7f9f5b8354047dc/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:28:5-82
+61-->[com.google.firebase:firebase-messaging:23.1.2] /Users/apple/Library/Android/sdk/caches/transforms-3/3fdac1b3bfd13a9ff7f9f5b8354047dc/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:28:22-79
+62    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+62-->[com.google.android.gms:play-services-measurement-api:21.3.0] /Users/apple/Library/Android/sdk/caches/transforms-3/3f67c84008a0606a4234fbd61f50d678/transformed/jetified-play-services-measurement-api-21.3.0/AndroidManifest.xml:25:5-79
+62-->[com.google.android.gms:play-services-measurement-api:21.3.0] /Users/apple/Library/Android/sdk/caches/transforms-3/3f67c84008a0606a4234fbd61f50d678/transformed/jetified-play-services-measurement-api-21.3.0/AndroidManifest.xml:25:22-76
+63    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+63-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/apple/Library/Android/sdk/caches/transforms-3/b79ff657eab2514329c00a8f5f3a1652/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:26:5-110
+63-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/apple/Library/Android/sdk/caches/transforms-3/b79ff657eab2514329c00a8f5f3a1652/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:26:22-107
+64
+65    <uses-feature
+65-->[com.google.android.gms:play-services-maps:17.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/4ccf3b33ccd315864cb4c20d35b8c78d/transformed/jetified-play-services-maps-17.0.0/AndroidManifest.xml:26:5-28:35
+66        android:glEsVersion="0x00020000"
+66-->[com.google.android.gms:play-services-maps:17.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/4ccf3b33ccd315864cb4c20d35b8c78d/transformed/jetified-play-services-maps-17.0.0/AndroidManifest.xml:27:9-41
+67        android:required="true" />
+67-->[com.google.android.gms:play-services-maps:17.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/4ccf3b33ccd315864cb4c20d35b8c78d/transformed/jetified-play-services-maps-17.0.0/AndroidManifest.xml:28:9-32
+68
+69    <application
+69-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:15:5-66:19
+70        android:name="com.theunpadh.MainApplication"
+70-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:16:7-38
+71        android:allowBackup="false"
+71-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:20:7-34
+72        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+72-->[androidx.core:core:1.7.0] /Users/apple/Library/Android/sdk/caches/transforms-3/b8b5399c0862d9000c4ef2424516afd4/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
+73        android:debuggable="true"
+74        android:hardwareAccelerated="true"
+74-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:22:9-43
+75        android:icon="@mipmap/ic_launcher"
+75-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:18:7-41
+76        android:label="@string/app_name"
+76-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:17:7-39
+77        android:roundIcon="@mipmap/ic_launcher_round"
+77-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:19:7-52
+78        android:supportsRtl="true"
+78-->[com.facebook.android:facebook-android-sdk:8.2.0] /Users/apple/Library/Android/sdk/caches/transforms-3/36f1815e82d80c1ae25aa054d01c22b1/transformed/jetified-facebook-android-sdk-8.2.0/AndroidManifest.xml:28:18-44
+79        android:testOnly="true"
+80        android:theme="@style/AppTheme"
+80-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:23:7-38
+81        android:usesCleartextTraffic="true" >
+81-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:21:7-42
+82        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+82-->/Users/apple/Desktop/unpadh/android/app/src/debug/AndroidManifest.xml:11:9-86
+82-->/Users/apple/Desktop/unpadh/android/app/src/debug/AndroidManifest.xml:11:19-83
+83
+84        <meta-data
+84-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:25:7-27:68
+85            android:name="com.google.android.geo.API_KEY"
+85-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:26:11-56
+86            android:value="AIzaSyBxRB7njC9Cv9Dn3VLM6CboohuxHBzy_oc" />
+86-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:27:11-66
+87        <!--
+88 <meta-data android:name="com.facebook.sdk.ApplicationId" 
+89    android:value="@string/facebook_app_id"/>
+90      <meta-data android:name="com.facebook.sdk.ClientToken" 
+91      android:value="@string/facebook_client_token"/>
+92        -->
+93        <meta-data
+93-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:32:1-34:59
+94            android:name="com.google.android.gms.version"
+94-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:33:3-48
+95            android:value="@integer/google_play_services_version" />
+95-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:34:3-56
+96
+97        <activity
+97-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:37:7-48:18
+98            android:name="com.theunpadh.MainActivity"
+98-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:38:9-37
+99            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+99-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:41:9-86
+100            android:exported="true"
+100-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:39:11-34
+101            android:label="@string/app_name"
+101-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:40:9-41
+102            android:launchMode="singleTask"
+102-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:42:9-40
+103            android:windowSoftInputMode="adjustResize" >
+103-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:43:9-51
+104            <intent-filter>
+104-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:44:9-47:25
+105                <action android:name="android.intent.action.MAIN" />
+105-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:45:13-65
+105-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:45:21-62
+106
+107                <category android:name="android.intent.category.LAUNCHER" />
+107-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:46:13-73
+107-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:46:23-70
+108            </intent-filter>
+109        </activity> <!-- ****************************** -->
+110        <meta-data
+110-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:53:5-54:46
+111            android:name="com.facebook.sdk.ApplicationId"
+111-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:53:16-61
+112            android:value="@string/facebook_app_id" />
+112-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:54:5-44
+113
+114        <activity
+114-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:56:5-65:16
+115            android:name="com.facebook.CustomTabActivity"
+115-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:57:7-52
+116            android:exported="true" >
+116-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:58:7-30
+117            <intent-filter>
+117-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:59:7-64:23
+118                <action android:name="android.intent.action.VIEW" />
+118-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:60:9-61
+118-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:60:17-58
+119
+120                <category android:name="android.intent.category.DEFAULT" />
+120-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:61:9-68
+120-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:61:19-65
+121                <category android:name="android.intent.category.BROWSABLE" />
+121-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:62:9-70
+121-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:62:19-67
+122
+123                <data android:scheme="@string/fb_login_protocol_scheme" />
+123-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:63:9-67
+123-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:63:15-64
+124            </intent-filter>
+125            <intent-filter>
+125-->[com.facebook.android:facebook-common:8.2.0] /Users/apple/Library/Android/sdk/caches/transforms-3/50d57a40f468002d4c439c824a2eccd6/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:39:13-48:29
+126                <action android:name="android.intent.action.VIEW" />
+126-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:60:9-61
+126-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:60:17-58
+127
+128                <category android:name="android.intent.category.DEFAULT" />
+128-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:61:9-68
+128-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:61:19-65
+129                <category android:name="android.intent.category.BROWSABLE" />
+129-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:62:9-70
+129-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:62:19-67
+130
+131                <data
+131-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:63:9-67
+132                    android:host="cct.com.theunpadh"
+133                    android:scheme="fbconnect" />
+133-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:63:15-64
+134            </intent-filter>
+135        </activity>
+136
+137        <service
+137-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:9-16:40
+138            android:name="io.invertase.firebase.messaging.ReactNativeFirebaseMessagingHeadlessService"
+138-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-103
+139            android:exported="false" />
+139-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-37
+140        <service
+140-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:9-23:19
+141            android:name="io.invertase.firebase.messaging.ReactNativeFirebaseMessagingService"
+141-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-95
+142            android:exported="false" >
+142-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:13-37
+143            <intent-filter>
+143-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-22:29
+144                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+144-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:17-78
+144-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:25-75
+145            </intent-filter>
+146        </service>
+147
+148        <receiver
+148-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:9-32:20
+149            android:name="io.invertase.firebase.messaging.ReactNativeFirebaseMessagingReceiver"
+149-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:26:13-96
+150            android:exported="true"
+150-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-36
+151            android:permission="com.google.android.c2dm.permission.SEND" >
+151-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:13-73
+152            <intent-filter>
+152-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-31:29
+153                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+153-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:17-81
+153-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:25-78
+154            </intent-filter>
+155        </receiver>
+156
+157        <meta-data
+157-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:34:9-36:36
+158            android:name="firebase_messaging_auto_init_enabled"
+158-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:35:13-64
+159            android:value="true" />
+159-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:36:13-33
+160        <meta-data
+160-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:37:9-39:32
+161            android:name="com.google.firebase.messaging.default_notification_channel_id"
+161-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:38:13-89
+162            android:value="" />
+162-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:39:13-29
+163        <meta-data
+163-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:40:9-42:47
+164            android:name="com.google.firebase.messaging.default_notification_color"
+164-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:41:13-84
+165            android:resource="@color/white" />
+165-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:42:13-44
+166        <meta-data
+166-->[:react-native-firebase_app] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:9-13:36
+167            android:name="app_data_collection_default_enabled"
+167-->[:react-native-firebase_app] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-63
+168            android:value="true" />
+168-->[:react-native-firebase_app] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-33
+169
+170        <service
+170-->[:react-native-firebase_app] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:9-23:19
+171            android:name="com.google.firebase.components.ComponentDiscoveryService"
+171-->[:react-native-firebase_app] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:13-84
+172            android:directBootAware="true"
+172-->[:react-native-firebase_app] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:13-43
+173            android:exported="false" >
+173-->[:react-native-firebase_app] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:13-37
+174            <meta-data
+174-->[:react-native-firebase_app] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-22:85
+175                android:name="com.google.firebase.components:io.invertase.firebase.app.ReactNativeFirebaseAppRegistrar"
+175-->[:react-native-firebase_app] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:17-120
+176                android:value="com.google.firebase.components.ComponentRegistrar" />
+176-->[:react-native-firebase_app] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:17-82
+177            <meta-data
+177-->[com.google.firebase:firebase-auth:22.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/eb5bc202215c99f0f764ddbcca0721e3/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:69:13-71:85
+178                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+178-->[com.google.firebase:firebase-auth:22.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/eb5bc202215c99f0f764ddbcca0721e3/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:70:17-109
+179                android:value="com.google.firebase.components.ComponentRegistrar" />
+179-->[com.google.firebase:firebase-auth:22.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/eb5bc202215c99f0f764ddbcca0721e3/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:71:17-82
+180            <meta-data
+180-->[com.google.firebase:firebase-messaging:23.1.2] /Users/apple/Library/Android/sdk/caches/transforms-3/3fdac1b3bfd13a9ff7f9f5b8354047dc/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:55:13-57:85
+181                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+181-->[com.google.firebase:firebase-messaging:23.1.2] /Users/apple/Library/Android/sdk/caches/transforms-3/3fdac1b3bfd13a9ff7f9f5b8354047dc/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:56:17-119
+182                android:value="com.google.firebase.components.ComponentRegistrar" />
+182-->[com.google.firebase:firebase-messaging:23.1.2] /Users/apple/Library/Android/sdk/caches/transforms-3/3fdac1b3bfd13a9ff7f9f5b8354047dc/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:57:17-82
+183            <meta-data
+183-->[com.google.firebase:firebase-datatransport:18.1.7] /Users/apple/Library/Android/sdk/caches/transforms-3/70b33ae9b20c2d12ece6566a4e25a3b4/transformed/jetified-firebase-datatransport-18.1.7/AndroidManifest.xml:27:13-29:85
+184                android:name="com.google.firebase.components:com.google.firebase.datatransport.TransportRegistrar"
+184-->[com.google.firebase:firebase-datatransport:18.1.7] /Users/apple/Library/Android/sdk/caches/transforms-3/70b33ae9b20c2d12ece6566a4e25a3b4/transformed/jetified-firebase-datatransport-18.1.7/AndroidManifest.xml:28:17-115
+185                android:value="com.google.firebase.components.ComponentRegistrar" />
+185-->[com.google.firebase:firebase-datatransport:18.1.7] /Users/apple/Library/Android/sdk/caches/transforms-3/70b33ae9b20c2d12ece6566a4e25a3b4/transformed/jetified-firebase-datatransport-18.1.7/AndroidManifest.xml:29:17-82
+186            <meta-data
+186-->[com.google.android.gms:play-services-measurement-api:21.3.0] /Users/apple/Library/Android/sdk/caches/transforms-3/3f67c84008a0606a4234fbd61f50d678/transformed/jetified-play-services-measurement-api-21.3.0/AndroidManifest.xml:31:13-33:85
+187                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+187-->[com.google.android.gms:play-services-measurement-api:21.3.0] /Users/apple/Library/Android/sdk/caches/transforms-3/3f67c84008a0606a4234fbd61f50d678/transformed/jetified-play-services-measurement-api-21.3.0/AndroidManifest.xml:32:17-139
+188                android:value="com.google.firebase.components.ComponentRegistrar" />
+188-->[com.google.android.gms:play-services-measurement-api:21.3.0] /Users/apple/Library/Android/sdk/caches/transforms-3/3f67c84008a0606a4234fbd61f50d678/transformed/jetified-play-services-measurement-api-21.3.0/AndroidManifest.xml:33:17-82
+189            <meta-data
+189-->[com.google.firebase:firebase-installations:17.1.3] /Users/apple/Library/Android/sdk/caches/transforms-3/235e2a9994d32c87ffde8ab1097fe8a9/transformed/jetified-firebase-installations-17.1.3/AndroidManifest.xml:17:13-19:85
+190                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+190-->[com.google.firebase:firebase-installations:17.1.3] /Users/apple/Library/Android/sdk/caches/transforms-3/235e2a9994d32c87ffde8ab1097fe8a9/transformed/jetified-firebase-installations-17.1.3/AndroidManifest.xml:18:17-127
+191                android:value="com.google.firebase.components.ComponentRegistrar" />
+191-->[com.google.firebase:firebase-installations:17.1.3] /Users/apple/Library/Android/sdk/caches/transforms-3/235e2a9994d32c87ffde8ab1097fe8a9/transformed/jetified-firebase-installations-17.1.3/AndroidManifest.xml:19:17-82
+192        </service>
+193
+194        <provider
+194-->[:react-native-firebase_app] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:9-29:38
+195            android:name="io.invertase.firebase.app.ReactNativeFirebaseAppInitProvider"
+195-->[:react-native-firebase_app] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:26:13-88
+196            android:authorities="com.theunpadh.reactnativefirebaseappinitprovider"
+196-->[:react-native-firebase_app] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:27:13-86
+197            android:exported="false"
+197-->[:react-native-firebase_app] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:13-37
+198            android:initOrder="99" />
+198-->[:react-native-firebase_app] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-35
+199        <provider
+199-->[:react-native-image-crop-picker] /Users/apple/Desktop/unpadh/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:18:9-26:20
+200            android:name="androidx.core.content.FileProvider"
+200-->[:react-native-image-crop-picker] /Users/apple/Desktop/unpadh/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:19:13-62
+201            android:authorities="com.theunpadh.provider"
+201-->[:react-native-image-crop-picker] /Users/apple/Desktop/unpadh/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-60
+202            android:exported="false"
+202-->[:react-native-image-crop-picker] /Users/apple/Desktop/unpadh/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:13-37
+203            android:grantUriPermissions="true" >
+203-->[:react-native-image-crop-picker] /Users/apple/Desktop/unpadh/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:22:13-47
+204            <meta-data
+204-->[:react-native-image-crop-picker] /Users/apple/Desktop/unpadh/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-25:58
+205                android:name="android.support.FILE_PROVIDER_PATHS"
+205-->[:react-native-image-crop-picker] /Users/apple/Desktop/unpadh/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-67
+206                android:resource="@xml/provider_paths" />
+206-->[:react-native-image-crop-picker] /Users/apple/Desktop/unpadh/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:17-55
+207        </provider>
+208
+209        <activity
+209-->[:react-native-image-crop-picker] /Users/apple/Desktop/unpadh/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:28:9-30:72
+210            android:name="com.yalantis.ucrop.UCropActivity"
+210-->[:react-native-image-crop-picker] /Users/apple/Desktop/unpadh/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-60
+211            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+211-->[:react-native-image-crop-picker] /Users/apple/Desktop/unpadh/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:13-69
+212
+213        <provider
+213-->[:react-native-image-picker] /Users/apple/Desktop/unpadh/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
+214            android:name="com.imagepicker.ImagePickerProvider"
+214-->[:react-native-image-picker] /Users/apple/Desktop/unpadh/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-63
+215            android:authorities="com.theunpadh.imagepickerprovider"
+215-->[:react-native-image-picker] /Users/apple/Desktop/unpadh/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-71
+216            android:exported="false"
+216-->[:react-native-image-picker] /Users/apple/Desktop/unpadh/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
+217            android:grantUriPermissions="true" >
+217-->[:react-native-image-picker] /Users/apple/Desktop/unpadh/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
+218            <meta-data
+218-->[:react-native-image-crop-picker] /Users/apple/Desktop/unpadh/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-25:58
+219                android:name="android.support.FILE_PROVIDER_PATHS"
+219-->[:react-native-image-crop-picker] /Users/apple/Desktop/unpadh/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-67
+220                android:resource="@xml/imagepicker_provider_paths" />
+220-->[:react-native-image-crop-picker] /Users/apple/Desktop/unpadh/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:17-55
+221        </provider>
+222
+223        <activity
+223-->[:react-native-razorpay] /Users/apple/Desktop/unpadh/node_modules/react-native-razorpay/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-12:86
+224            android:name="com.razorpay.CheckoutActivity"
+224-->[:react-native-razorpay] /Users/apple/Desktop/unpadh/node_modules/react-native-razorpay/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-57
+225            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+225-->[:react-native-razorpay] /Users/apple/Desktop/unpadh/node_modules/react-native-razorpay/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-83
+226            android:exported="false"
+226-->[com.razorpay:checkout:1.6.34] /Users/apple/Library/Android/sdk/caches/transforms-3/527c58d4e2fb96360b9aa33718f25d12/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:54:13-37
+227            android:theme="@style/CheckoutTheme" >
+227-->[com.razorpay:checkout:1.6.34] /Users/apple/Library/Android/sdk/caches/transforms-3/527c58d4e2fb96360b9aa33718f25d12/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:55:13-49
+228            <intent-filter>
+228-->[com.razorpay:checkout:1.6.34] /Users/apple/Library/Android/sdk/caches/transforms-3/527c58d4e2fb96360b9aa33718f25d12/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:56:13-58:29
+229                <action android:name="android.intent.action.MAIN" />
+229-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:45:13-65
+229-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:45:21-62
+230            </intent-filter>
+231        </activity>
+232
+233        <provider
+233-->[:react-native-webview] /Users/apple/Desktop/unpadh/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
+234            android:name="com.reactnativecommunity.webview.RNCWebViewFileProvider"
+234-->[:react-native-webview] /Users/apple/Desktop/unpadh/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-83
+235            android:authorities="com.theunpadh.fileprovider"
+235-->[:react-native-webview] /Users/apple/Desktop/unpadh/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-64
+236            android:exported="false"
+236-->[:react-native-webview] /Users/apple/Desktop/unpadh/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
+237            android:grantUriPermissions="true" >
+237-->[:react-native-webview] /Users/apple/Desktop/unpadh/node_modules/react-native-webview/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
+238            <meta-data
+238-->[:react-native-image-crop-picker] /Users/apple/Desktop/unpadh/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:23:13-25:58
+239                android:name="android.support.FILE_PROVIDER_PATHS"
+239-->[:react-native-image-crop-picker] /Users/apple/Desktop/unpadh/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:24:17-67
+240                android:resource="@xml/file_provider_paths" />
+240-->[:react-native-image-crop-picker] /Users/apple/Desktop/unpadh/node_modules/react-native-image-crop-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:25:17-55
+241        </provider>
+242
+243        <activity
+243-->[com.google.firebase:firebase-auth:22.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/eb5bc202215c99f0f764ddbcca0721e3/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:29:9-46:20
+244            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+244-->[com.google.firebase:firebase-auth:22.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/eb5bc202215c99f0f764ddbcca0721e3/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:30:13-80
+245            android:excludeFromRecents="true"
+245-->[com.google.firebase:firebase-auth:22.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/eb5bc202215c99f0f764ddbcca0721e3/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:31:13-46
+246            android:exported="true"
+246-->[com.google.firebase:firebase-auth:22.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/eb5bc202215c99f0f764ddbcca0721e3/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:32:13-36
+247            android:launchMode="singleTask"
+247-->[com.google.firebase:firebase-auth:22.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/eb5bc202215c99f0f764ddbcca0721e3/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:33:13-44
+248            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+248-->[com.google.firebase:firebase-auth:22.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/eb5bc202215c99f0f764ddbcca0721e3/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:34:13-72
+249            <intent-filter>
+249-->[com.google.firebase:firebase-auth:22.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/eb5bc202215c99f0f764ddbcca0721e3/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:35:13-45:29
+250                <action android:name="android.intent.action.VIEW" />
+250-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:60:9-61
+250-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:60:17-58
+251
+252                <category android:name="android.intent.category.DEFAULT" />
+252-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:61:9-68
+252-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:61:19-65
+253                <category android:name="android.intent.category.BROWSABLE" />
+253-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:62:9-70
+253-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:62:19-67
+254
+255                <data
+255-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:63:9-67
+256                    android:host="firebase.auth"
+257                    android:path="/"
+258                    android:scheme="genericidp" />
+258-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:63:15-64
+259            </intent-filter>
+260        </activity>
+261        <activity
+261-->[com.google.firebase:firebase-auth:22.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/eb5bc202215c99f0f764ddbcca0721e3/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:47:9-64:20
+262            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+262-->[com.google.firebase:firebase-auth:22.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/eb5bc202215c99f0f764ddbcca0721e3/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:48:13-79
+263            android:excludeFromRecents="true"
+263-->[com.google.firebase:firebase-auth:22.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/eb5bc202215c99f0f764ddbcca0721e3/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:49:13-46
+264            android:exported="true"
+264-->[com.google.firebase:firebase-auth:22.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/eb5bc202215c99f0f764ddbcca0721e3/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:50:13-36
+265            android:launchMode="singleTask"
+265-->[com.google.firebase:firebase-auth:22.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/eb5bc202215c99f0f764ddbcca0721e3/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:51:13-44
+266            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+266-->[com.google.firebase:firebase-auth:22.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/eb5bc202215c99f0f764ddbcca0721e3/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:52:13-72
+267            <intent-filter>
+267-->[com.google.firebase:firebase-auth:22.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/eb5bc202215c99f0f764ddbcca0721e3/transformed/jetified-firebase-auth-22.0.0/AndroidManifest.xml:53:13-63:29
+268                <action android:name="android.intent.action.VIEW" />
+268-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:60:9-61
+268-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:60:17-58
+269
+270                <category android:name="android.intent.category.DEFAULT" />
+270-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:61:9-68
+270-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:61:19-65
+271                <category android:name="android.intent.category.BROWSABLE" />
+271-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:62:9-70
+271-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:62:19-67
+272
+273                <data
+273-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:63:9-67
+274                    android:host="firebase.auth"
+275                    android:path="/"
+276                    android:scheme="recaptcha" />
+276-->/Users/apple/Desktop/unpadh/android/app/src/main/AndroidManifest.xml:63:15-64
+277            </intent-filter>
+278        </activity>
+279
+280        <receiver
+280-->[com.razorpay:checkout:1.6.34] /Users/apple/Library/Android/sdk/caches/transforms-3/527c58d4e2fb96360b9aa33718f25d12/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:42:9-49:20
+281            android:name="com.razorpay.RzpTokenReceiver"
+281-->[com.razorpay:checkout:1.6.34] /Users/apple/Library/Android/sdk/caches/transforms-3/527c58d4e2fb96360b9aa33718f25d12/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:43:13-57
+282            android:exported="true" >
+282-->[com.razorpay:checkout:1.6.34] /Users/apple/Library/Android/sdk/caches/transforms-3/527c58d4e2fb96360b9aa33718f25d12/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:44:13-36
+283            <intent-filter>
+283-->[com.razorpay:checkout:1.6.34] /Users/apple/Library/Android/sdk/caches/transforms-3/527c58d4e2fb96360b9aa33718f25d12/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:46:13-48:29
+284                <action android:name="rzp.device_token.share" />
+284-->[com.razorpay:checkout:1.6.34] /Users/apple/Library/Android/sdk/caches/transforms-3/527c58d4e2fb96360b9aa33718f25d12/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:37:13-61
+284-->[com.razorpay:checkout:1.6.34] /Users/apple/Library/Android/sdk/caches/transforms-3/527c58d4e2fb96360b9aa33718f25d12/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:37:21-58
+285            </intent-filter>
+286        </receiver>
+287
+288        <meta-data
+288-->[com.razorpay:checkout:1.6.34] /Users/apple/Library/Android/sdk/caches/transforms-3/527c58d4e2fb96360b9aa33718f25d12/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:61:9-63:58
+289            android:name="com.razorpay.plugin.googlepay_all"
+289-->[com.razorpay:checkout:1.6.34] /Users/apple/Library/Android/sdk/caches/transforms-3/527c58d4e2fb96360b9aa33718f25d12/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:62:13-61
+290            android:value="com.razorpay.RzpGpayMerged" />
+290-->[com.razorpay:checkout:1.6.34] /Users/apple/Library/Android/sdk/caches/transforms-3/527c58d4e2fb96360b9aa33718f25d12/transformed/jetified-checkout-1.6.34/AndroidManifest.xml:63:13-55
+291
+292        <activity
+292-->[com.facebook.android:facebook-common:8.2.0] /Users/apple/Library/Android/sdk/caches/transforms-3/50d57a40f468002d4c439c824a2eccd6/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:30:9-33:66
+293            android:name="com.facebook.FacebookActivity"
+293-->[com.facebook.android:facebook-common:8.2.0] /Users/apple/Library/Android/sdk/caches/transforms-3/50d57a40f468002d4c439c824a2eccd6/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:31:13-57
+294            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+294-->[com.facebook.android:facebook-common:8.2.0] /Users/apple/Library/Android/sdk/caches/transforms-3/50d57a40f468002d4c439c824a2eccd6/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:32:13-96
+295            android:theme="@style/com_facebook_activity_theme" />
+295-->[com.facebook.android:facebook-common:8.2.0] /Users/apple/Library/Android/sdk/caches/transforms-3/50d57a40f468002d4c439c824a2eccd6/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:33:13-63
+296        <activity android:name="com.facebook.CustomTabMainActivity" />
+296-->[com.facebook.android:facebook-common:8.2.0] /Users/apple/Library/Android/sdk/caches/transforms-3/50d57a40f468002d4c439c824a2eccd6/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:34:9-71
+296-->[com.facebook.android:facebook-common:8.2.0] /Users/apple/Library/Android/sdk/caches/transforms-3/50d57a40f468002d4c439c824a2eccd6/transformed/jetified-facebook-common-8.2.0/AndroidManifest.xml:34:19-68
+297
+298        <receiver
+298-->[com.google.firebase:firebase-messaging:23.1.2] /Users/apple/Library/Android/sdk/caches/transforms-3/3fdac1b3bfd13a9ff7f9f5b8354047dc/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:31:9-38:20
+299            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+299-->[com.google.firebase:firebase-messaging:23.1.2] /Users/apple/Library/Android/sdk/caches/transforms-3/3fdac1b3bfd13a9ff7f9f5b8354047dc/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:32:13-78
+300            android:exported="true"
+300-->[com.google.firebase:firebase-messaging:23.1.2] /Users/apple/Library/Android/sdk/caches/transforms-3/3fdac1b3bfd13a9ff7f9f5b8354047dc/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:33:13-36
+301            android:permission="com.google.android.c2dm.permission.SEND" >
+301-->[com.google.firebase:firebase-messaging:23.1.2] /Users/apple/Library/Android/sdk/caches/transforms-3/3fdac1b3bfd13a9ff7f9f5b8354047dc/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:34:13-73
+302            <intent-filter>
+302-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:29:13-31:29
+303                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+303-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:17-81
+303-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:30:25-78
+304            </intent-filter>
+305        </receiver>
+306        <!--
+307             FirebaseMessagingService performs security checks at runtime,
+308             but set to not exported to explicitly avoid allowing another app to call it.
+309        -->
+310        <service
+310-->[com.google.firebase:firebase-messaging:23.1.2] /Users/apple/Library/Android/sdk/caches/transforms-3/3fdac1b3bfd13a9ff7f9f5b8354047dc/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:44:9-51:19
+311            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+311-->[com.google.firebase:firebase-messaging:23.1.2] /Users/apple/Library/Android/sdk/caches/transforms-3/3fdac1b3bfd13a9ff7f9f5b8354047dc/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:45:13-82
+312            android:directBootAware="true"
+312-->[com.google.firebase:firebase-messaging:23.1.2] /Users/apple/Library/Android/sdk/caches/transforms-3/3fdac1b3bfd13a9ff7f9f5b8354047dc/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:46:13-43
+313            android:exported="false" >
+313-->[com.google.firebase:firebase-messaging:23.1.2] /Users/apple/Library/Android/sdk/caches/transforms-3/3fdac1b3bfd13a9ff7f9f5b8354047dc/transformed/jetified-firebase-messaging-23.1.2/AndroidManifest.xml:47:13-37
+314            <intent-filter android:priority="-500" >
+314-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:20:13-22:29
+315                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+315-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:17-78
+315-->[:react-native-firebase_messaging] /Users/apple/Desktop/unpadh/node_modules/@react-native-firebase/messaging/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:21:25-75
+316            </intent-filter>
+317        </service>
+318        <service
+318-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/apple/Library/Android/sdk/caches/transforms-3/9f5ce7d4e15cdec90f5851dd668c66ff/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:28:9-34:19
+319            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+319-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/apple/Library/Android/sdk/caches/transforms-3/9f5ce7d4e15cdec90f5851dd668c66ff/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:29:13-103
+320            android:exported="false" >
+320-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/apple/Library/Android/sdk/caches/transforms-3/9f5ce7d4e15cdec90f5851dd668c66ff/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:30:13-37
+321            <meta-data
+321-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/apple/Library/Android/sdk/caches/transforms-3/9f5ce7d4e15cdec90f5851dd668c66ff/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:31:13-33:39
+322                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+322-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/apple/Library/Android/sdk/caches/transforms-3/9f5ce7d4e15cdec90f5851dd668c66ff/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:32:17-94
+323                android:value="cct" />
+323-->[com.google.android.datatransport:transport-backend-cct:3.1.8] /Users/apple/Library/Android/sdk/caches/transforms-3/9f5ce7d4e15cdec90f5851dd668c66ff/transformed/jetified-transport-backend-cct-3.1.8/AndroidManifest.xml:33:17-36
+324        </service>
+325        <service
+325-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/apple/Library/Android/sdk/caches/transforms-3/9d85dac7a846f6c2389e46a2330896cf/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:26:9-30:19
+326            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+326-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/apple/Library/Android/sdk/caches/transforms-3/9d85dac7a846f6c2389e46a2330896cf/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:27:13-117
+327            android:exported="false"
+327-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/apple/Library/Android/sdk/caches/transforms-3/9d85dac7a846f6c2389e46a2330896cf/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:28:13-37
+328            android:permission="android.permission.BIND_JOB_SERVICE" >
+328-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/apple/Library/Android/sdk/caches/transforms-3/9d85dac7a846f6c2389e46a2330896cf/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:29:13-69
+329        </service>
+330
+331        <receiver
+331-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/apple/Library/Android/sdk/caches/transforms-3/9d85dac7a846f6c2389e46a2330896cf/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:32:9-34:40
+332            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+332-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/apple/Library/Android/sdk/caches/transforms-3/9d85dac7a846f6c2389e46a2330896cf/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:33:13-132
+333            android:exported="false" />
+333-->[com.google.android.datatransport:transport-runtime:3.1.8] /Users/apple/Library/Android/sdk/caches/transforms-3/9d85dac7a846f6c2389e46a2330896cf/transformed/jetified-transport-runtime-3.1.8/AndroidManifest.xml:34:13-37
+334
+335        <provider
+335-->[com.google.firebase:firebase-common:20.3.2] /Users/apple/Library/Android/sdk/caches/transforms-3/b9460ee136f1b5101edbdcee31d4c4cb/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:25:9-30:39
+336            android:name="com.google.firebase.provider.FirebaseInitProvider"
+336-->[com.google.firebase:firebase-common:20.3.2] /Users/apple/Library/Android/sdk/caches/transforms-3/b9460ee136f1b5101edbdcee31d4c4cb/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:26:13-77
+337            android:authorities="com.theunpadh.firebaseinitprovider"
+337-->[com.google.firebase:firebase-common:20.3.2] /Users/apple/Library/Android/sdk/caches/transforms-3/b9460ee136f1b5101edbdcee31d4c4cb/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:27:13-72
+338            android:directBootAware="true"
+338-->[com.google.firebase:firebase-common:20.3.2] /Users/apple/Library/Android/sdk/caches/transforms-3/b9460ee136f1b5101edbdcee31d4c4cb/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:28:13-43
+339            android:exported="false"
+339-->[com.google.firebase:firebase-common:20.3.2] /Users/apple/Library/Android/sdk/caches/transforms-3/b9460ee136f1b5101edbdcee31d4c4cb/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:29:13-37
+340            android:initOrder="100" />
+340-->[com.google.firebase:firebase-common:20.3.2] /Users/apple/Library/Android/sdk/caches/transforms-3/b9460ee136f1b5101edbdcee31d4c4cb/transformed/jetified-firebase-common-20.3.2/AndroidManifest.xml:30:13-36
+341        <!--
+342         The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
+343         with the application context. This config is merged in with the host app's manifest,
+344         but there can only be one provider with the same authority activated at any given
+345         point; so if the end user has two or more different apps that use Facebook SDK, only the
+346         first one will be able to use the provider. To work around this problem, we use the
+347         following placeholder in the authority to identify each host application as if it was
+348         a completely different provider.
+349        -->
+350        <provider
+350-->[com.facebook.android:facebook-core:8.2.0] /Users/apple/Library/Android/sdk/caches/transforms-3/4afdb5d2ab9c28e473b021a2dc75caa4/transformed/jetified-facebook-core-8.2.0/AndroidManifest.xml:39:9-42:40
+351            android:name="com.facebook.internal.FacebookInitProvider"
+351-->[com.facebook.android:facebook-core:8.2.0] /Users/apple/Library/Android/sdk/caches/transforms-3/4afdb5d2ab9c28e473b021a2dc75caa4/transformed/jetified-facebook-core-8.2.0/AndroidManifest.xml:40:13-70
+352            android:authorities="com.theunpadh.FacebookInitProvider"
+352-->[com.facebook.android:facebook-core:8.2.0] /Users/apple/Library/Android/sdk/caches/transforms-3/4afdb5d2ab9c28e473b021a2dc75caa4/transformed/jetified-facebook-core-8.2.0/AndroidManifest.xml:41:13-72
+353            android:exported="false" />
+353-->[com.facebook.android:facebook-core:8.2.0] /Users/apple/Library/Android/sdk/caches/transforms-3/4afdb5d2ab9c28e473b021a2dc75caa4/transformed/jetified-facebook-core-8.2.0/AndroidManifest.xml:42:13-37
+354
+355        <receiver
+355-->[com.facebook.android:facebook-core:8.2.0] /Users/apple/Library/Android/sdk/caches/transforms-3/4afdb5d2ab9c28e473b021a2dc75caa4/transformed/jetified-facebook-core-8.2.0/AndroidManifest.xml:44:9-50:20
+356            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
+356-->[com.facebook.android:facebook-core:8.2.0] /Users/apple/Library/Android/sdk/caches/transforms-3/4afdb5d2ab9c28e473b021a2dc75caa4/transformed/jetified-facebook-core-8.2.0/AndroidManifest.xml:45:13-86
+357            android:exported="false" >
+357-->[com.facebook.android:facebook-core:8.2.0] /Users/apple/Library/Android/sdk/caches/transforms-3/4afdb5d2ab9c28e473b021a2dc75caa4/transformed/jetified-facebook-core-8.2.0/AndroidManifest.xml:46:13-37
+358            <intent-filter>
+358-->[com.facebook.android:facebook-core:8.2.0] /Users/apple/Library/Android/sdk/caches/transforms-3/4afdb5d2ab9c28e473b021a2dc75caa4/transformed/jetified-facebook-core-8.2.0/AndroidManifest.xml:47:13-49:29
+359                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
+359-->[com.facebook.android:facebook-core:8.2.0] /Users/apple/Library/Android/sdk/caches/transforms-3/4afdb5d2ab9c28e473b021a2dc75caa4/transformed/jetified-facebook-core-8.2.0/AndroidManifest.xml:48:17-95
+359-->[com.facebook.android:facebook-core:8.2.0] /Users/apple/Library/Android/sdk/caches/transforms-3/4afdb5d2ab9c28e473b021a2dc75caa4/transformed/jetified-facebook-core-8.2.0/AndroidManifest.xml:48:25-92
+360            </intent-filter>
+361        </receiver>
+362
+363        <activity
+363-->[com.google.android.gms:play-services-auth:20.5.0] /Users/apple/Library/Android/sdk/caches/transforms-3/6082b953ab5ff2112a9304e45499107e/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:23:9-27:75
+364            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+364-->[com.google.android.gms:play-services-auth:20.5.0] /Users/apple/Library/Android/sdk/caches/transforms-3/6082b953ab5ff2112a9304e45499107e/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:24:13-93
+365            android:excludeFromRecents="true"
+365-->[com.google.android.gms:play-services-auth:20.5.0] /Users/apple/Library/Android/sdk/caches/transforms-3/6082b953ab5ff2112a9304e45499107e/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:25:13-46
+366            android:exported="false"
+366-->[com.google.android.gms:play-services-auth:20.5.0] /Users/apple/Library/Android/sdk/caches/transforms-3/6082b953ab5ff2112a9304e45499107e/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:26:13-37
+367            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+367-->[com.google.android.gms:play-services-auth:20.5.0] /Users/apple/Library/Android/sdk/caches/transforms-3/6082b953ab5ff2112a9304e45499107e/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:27:13-72
+368        <!--
+369            Service handling Google Sign-In user revocation. For apps that do not integrate with
+370            Google Sign-In, this service will never be started.
+371        -->
+372        <service
+372-->[com.google.android.gms:play-services-auth:20.5.0] /Users/apple/Library/Android/sdk/caches/transforms-3/6082b953ab5ff2112a9304e45499107e/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:33:9-37:51
+373            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+373-->[com.google.android.gms:play-services-auth:20.5.0] /Users/apple/Library/Android/sdk/caches/transforms-3/6082b953ab5ff2112a9304e45499107e/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:34:13-89
+374            android:exported="true"
+374-->[com.google.android.gms:play-services-auth:20.5.0] /Users/apple/Library/Android/sdk/caches/transforms-3/6082b953ab5ff2112a9304e45499107e/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:35:13-36
+375            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+375-->[com.google.android.gms:play-services-auth:20.5.0] /Users/apple/Library/Android/sdk/caches/transforms-3/6082b953ab5ff2112a9304e45499107e/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:36:13-107
+376            android:visibleToInstantApps="true" />
+376-->[com.google.android.gms:play-services-auth:20.5.0] /Users/apple/Library/Android/sdk/caches/transforms-3/6082b953ab5ff2112a9304e45499107e/transformed/jetified-play-services-auth-20.5.0/AndroidManifest.xml:37:13-48
+377
+378        <receiver
+378-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/apple/Library/Android/sdk/caches/transforms-3/b79ff657eab2514329c00a8f5f3a1652/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:29:9-33:20
+379            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+379-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/apple/Library/Android/sdk/caches/transforms-3/b79ff657eab2514329c00a8f5f3a1652/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:30:13-85
+380            android:enabled="true"
+380-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/apple/Library/Android/sdk/caches/transforms-3/b79ff657eab2514329c00a8f5f3a1652/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:31:13-35
+381            android:exported="false" >
+381-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/apple/Library/Android/sdk/caches/transforms-3/b79ff657eab2514329c00a8f5f3a1652/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:32:13-37
+382        </receiver>
+383
+384        <service
+384-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/apple/Library/Android/sdk/caches/transforms-3/b79ff657eab2514329c00a8f5f3a1652/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:35:9-38:40
+385            android:name="com.google.android.gms.measurement.AppMeasurementService"
+385-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/apple/Library/Android/sdk/caches/transforms-3/b79ff657eab2514329c00a8f5f3a1652/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:36:13-84
+386            android:enabled="true"
+386-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/apple/Library/Android/sdk/caches/transforms-3/b79ff657eab2514329c00a8f5f3a1652/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:37:13-35
+387            android:exported="false" />
+387-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/apple/Library/Android/sdk/caches/transforms-3/b79ff657eab2514329c00a8f5f3a1652/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:38:13-37
+388        <service
+388-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/apple/Library/Android/sdk/caches/transforms-3/b79ff657eab2514329c00a8f5f3a1652/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:39:9-43:72
+389            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+389-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/apple/Library/Android/sdk/caches/transforms-3/b79ff657eab2514329c00a8f5f3a1652/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:40:13-87
+390            android:enabled="true"
+390-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/apple/Library/Android/sdk/caches/transforms-3/b79ff657eab2514329c00a8f5f3a1652/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:41:13-35
+391            android:exported="false"
+391-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/apple/Library/Android/sdk/caches/transforms-3/b79ff657eab2514329c00a8f5f3a1652/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:42:13-37
+392            android:permission="android.permission.BIND_JOB_SERVICE" /> <!-- Needs to be explicitly declared on P+ -->
+392-->[com.google.android.gms:play-services-measurement:21.3.0] /Users/apple/Library/Android/sdk/caches/transforms-3/b79ff657eab2514329c00a8f5f3a1652/transformed/jetified-play-services-measurement-21.3.0/AndroidManifest.xml:43:13-69
+393        <uses-library
+393-->[com.google.android.gms:play-services-maps:17.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/4ccf3b33ccd315864cb4c20d35b8c78d/transformed/jetified-play-services-maps-17.0.0/AndroidManifest.xml:33:9-35:40
+394            android:name="org.apache.http.legacy"
+394-->[com.google.android.gms:play-services-maps:17.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/4ccf3b33ccd315864cb4c20d35b8c78d/transformed/jetified-play-services-maps-17.0.0/AndroidManifest.xml:34:13-50
+395            android:required="false" />
+395-->[com.google.android.gms:play-services-maps:17.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/4ccf3b33ccd315864cb4c20d35b8c78d/transformed/jetified-play-services-maps-17.0.0/AndroidManifest.xml:35:13-37
+396
+397        <activity
+397-->[com.google.android.gms:play-services-base:18.0.1] /Users/apple/Library/Android/sdk/caches/transforms-3/12b65d76461d247a88f3b81c738c4e1e/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+398            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+398-->[com.google.android.gms:play-services-base:18.0.1] /Users/apple/Library/Android/sdk/caches/transforms-3/12b65d76461d247a88f3b81c738c4e1e/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+399            android:exported="false"
+399-->[com.google.android.gms:play-services-base:18.0.1] /Users/apple/Library/Android/sdk/caches/transforms-3/12b65d76461d247a88f3b81c738c4e1e/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+400            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+400-->[com.google.android.gms:play-services-base:18.0.1] /Users/apple/Library/Android/sdk/caches/transforms-3/12b65d76461d247a88f3b81c738c4e1e/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+401
+402        <provider
+402-->[androidx.emoji2:emoji2:1.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/461240f61210ef327626136853f79da8/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+403            android:name="androidx.startup.InitializationProvider"
+403-->[androidx.emoji2:emoji2:1.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/461240f61210ef327626136853f79da8/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
+404            android:authorities="com.theunpadh.androidx-startup"
+404-->[androidx.emoji2:emoji2:1.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/461240f61210ef327626136853f79da8/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
+405            android:exported="false" >
+405-->[androidx.emoji2:emoji2:1.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/461240f61210ef327626136853f79da8/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
+406            <meta-data
+406-->[androidx.emoji2:emoji2:1.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/461240f61210ef327626136853f79da8/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+407                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+407-->[androidx.emoji2:emoji2:1.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/461240f61210ef327626136853f79da8/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
+408                android:value="androidx.startup" />
+408-->[androidx.emoji2:emoji2:1.0.0] /Users/apple/Library/Android/sdk/caches/transforms-3/461240f61210ef327626136853f79da8/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
+409            <meta-data
+409-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/apple/Library/Android/sdk/caches/transforms-3/3b5dcb930e760c6a1c921c655f90d92e/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+410                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+410-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/apple/Library/Android/sdk/caches/transforms-3/3b5dcb930e760c6a1c921c655f90d92e/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+411                android:value="androidx.startup" />
+411-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/apple/Library/Android/sdk/caches/transforms-3/3b5dcb930e760c6a1c921c655f90d92e/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+412        </provider>
+413    </application>
+414
+415</manifest>
