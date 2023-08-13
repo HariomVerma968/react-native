@@ -87,8 +87,6 @@ const Signinscreen = (props: SigninscreenProps) => {
     dispatch(getemailId({ email, platform, androidVersion, deviceName, devicesType, getdevicesId, DevicesToken, ChoseLang }));
   };
 
-  global.a = email
-  console.log("hdbvjbs", global.a)
   const UserEmail = useSelector(state => state.data.getemailId);
   console.log("jbcjhbajhcb", UserEmail)
   const passwordfunction = () => {
