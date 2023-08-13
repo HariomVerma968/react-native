@@ -1,47 +1,29 @@
 import { useRef, useEffect } from "react";
 import {
-  Text,
-  StyleSheet,
-  View,
-  Image,
-  ImageBackground,
-  TouchableOpacity,
-  Platform,
-  Alert,
-  FlatList,
-  Dimensions,
-  Button,
-  Modal
+  Text, View,
+  Image, TouchableOpacity,
+  Platform, FlatList,
+  Dimensions, Modal
 } from "react-native";
-import React, { Component, useState } from "react";
-import RBSheet from "react-native-raw-bottom-sheet";
+import React, { useState } from "react";
 import {
   Responsive,
   Images,
   Color,
   Screen,
-  Loader,
-  Fonts,
-  Utility,
-  Storage,
-
+  Loader, Utility
 } from "../../Helper";
 import messaging from '@react-native-firebase/messaging';
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
 import { useSelector, useDispatch } from 'react-redux';
 import styles from "./Signinscreenstyle";
 import {
-  AppHeader,
   AppScrollview,
   AppContainer,
   AppTextInput,
-  AppButton,
+  AppButton
 } from "../../Component";
 import { ApiEndPoints, ApiServices } from "../../NetworkCall";
 import DeviceInfo from "react-native-device-info";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import RadioForm from 'react-native-simple-radio-button';
 import i18next, { languageResources } from '../../../services/i18next';
 import { useTranslation } from 'react-i18next';
 import languagesList from '../../../services/languagesList.json';
@@ -86,9 +68,7 @@ const Signinscreen = (props: SigninscreenProps) => {
   const getEmailData = () => {
     dispatch(getemailId({ email, platform, androidVersion, deviceName, devicesType, getdevicesId, DevicesToken, ChoseLang }));
   };
-
   const UserEmail = useSelector(state => state.data.getemailId);
-  console.log("jbcjhbajhcb", UserEmail)
   const passwordfunction = () => {
     if (eyshow == true) {
       setEyeshow(false);
@@ -106,7 +86,6 @@ const Signinscreen = (props: SigninscreenProps) => {
         await messaging().requestPermission();
         const token = await messaging().getToken();
         setDevicesToken(token)
-        console.log('Device Token (APNs):', token);
       } catch (error) {
         console.log('Permission denied or error:', error);
       }
@@ -118,17 +97,13 @@ const Signinscreen = (props: SigninscreenProps) => {
     if (Platform.OS === 'ios') {
       // Code for iOS
       setPlatform('ios')
-      console.log('Running on iOS');
     } else if (Platform.OS === 'android') {
       // Code for Android
       setPlatform('android')
-      console.log('Running on Android');
     } else {
       // Code for other platforms (if applicable)
-      console.log('Running on a platform other than iOS or Android');
     }
     setgetdevicesId(DeviceInfo.getUniqueIdSync())
-    console.log("D...///", DeviceInfo.getDeviceToken())
     setdeviceName(DeviceInfo.getDeviceNameSync())
     setandroidVersion(DeviceInfo.getSystemVersion())
 
@@ -136,10 +111,8 @@ const Signinscreen = (props: SigninscreenProps) => {
 
     if (isTablet) {
       setdevicesType("Tablet")
-      console.log('Device type: Tablet');
     } else {
       setdevicesType("Phone")
-      console.log('Device type: Phone');
     }
 
 
@@ -181,9 +154,7 @@ const Signinscreen = (props: SigninscreenProps) => {
     if (!password) {
       return Utility.showDangerToast("Please enter your password");
     }
-    // navigation.navigate(Screen.HomeScreen)
 
-    // const RegisterAPI = () => {
     const payload1 = {
 
       primary_email: email,
@@ -197,17 +168,13 @@ const Signinscreen = (props: SigninscreenProps) => {
       language: ChoseLang
 
     };
-
-    console.log("payload1.//......", payload1)
     ApiServices("post", payload1, ApiEndPoints.login)
       .then((response: any) => {
         Loader.isLoading(false);
         if (response.data.status === 1) {
           const user_tokan = response?.data?.jwt_token;
-          console.log("user_tokan..", user_tokan)
           loc_global.userData = user_tokan;
           Utility.showSuccessToast("Login Successfully");
-
           navigation.navigate(Screen.SetUpYourProfilesScreen);
         } else {
           Utility.showDangerToast(response.data.message);
@@ -220,12 +187,10 @@ const Signinscreen = (props: SigninscreenProps) => {
 
   const deviceToken = () => {
     let devivetokean = DeviceInfo.getDeviceToken();
-    console.log("djnfkvb...", devivetokean);
   };
 
   const getDeviceID = async () => {
     let uniqueId = DeviceInfo.getDeviceToken();
-    console.log("sdbvkbsd....", uniqueId);
   };
 
   return (

@@ -1,45 +1,29 @@
 import { useRef, useEffect } from "react";
 import {
-  Text,
-  StyleSheet,
-  View,
-  Image,
-  ImageBackground,
-  TouchableOpacity,
-  Platform,
-  Alert,
-  FlatList,
+  Text, View,
+  Image, TouchableOpacity, FlatList
 } from "react-native";
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import RBSheet from "react-native-raw-bottom-sheet";
 import {
   Responsive,
   Images,
   Color,
   Screen,
-  Loader,
-  Fonts,
-  Utility,
-  Storage,
+  Loader, Utility
 } from "../../Helper";
-import Axios from "axios";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
 import styles from "./RealDScreenstyle";
 import {
-  AppHeader,
   AppScrollview,
   AppContainer,
   AppTextInput,
-  AppButton,
+  AppButton
 } from "../../Component";
 import { ApiEndPoints, ApiServices } from "../../NetworkCall";
-import DeviceInfo from "react-native-device-info";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { launchImageLibrary } from "react-native-image-picker";
 import ImagePicker from "react-native-image-crop-picker";
 import BottomSheet from "react-native-bottomsheet";
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 interface RealDScreenProps {
   navigation?: any;
@@ -60,7 +44,6 @@ const RealDScreen = (props: RealDScreenProps) => {
 
   const { navigation } = props;
   const refRBSheet: any = useRef();
-  const [language, setLanguage] = React.useState('')
   const [imagepath, setIMagespath] = React.useState(null);
   const [roll, setroll] = React.useState("##");
   const [mobilenum, setmobilenum] = useState("");
@@ -68,18 +51,12 @@ const RealDScreen = (props: RealDScreenProps) => {
   const [Firstname, setFirstname] = useState("");
   const [Username, setUsername] = useState("");
   const [getCountry, setgetCountry] = useState();
-  const [statelist, setstatelist] = React.useState([
 
-    { name: '91' },
-    { name: '94' },
-  ]);
 
 
   useEffect(() => {
-    console.log("loc_global?.userData?...///", loc_global?.userData)
     getCountryApi()
   }, []);
-  console.log("zdgcvj,../roll", roll)
 
   const onPickImage = () => {
     BottomSheet.showBottomSheetWithOptions(
@@ -97,8 +74,6 @@ const RealDScreen = (props: RealDScreenProps) => {
             // showCropFrame: true
           }).then((imagepath) => {
             setIMagespath(imagepath);
-            console.log("show path kjbkbk>>>", imagepath.path);
-            // myAsyncPDFFunction(image.path)
           });
         } else if (value === 1) {
           launchImageLibrary(
@@ -109,7 +84,6 @@ const RealDScreen = (props: RealDScreenProps) => {
             (response) => {
               if (response) {
                 const imagedata = response.assets[0];
-                console.log("imagedata.....", imagedata.uri);
                 setIMagespath({
                   path: imagedata.uri,
                   ...imagedata,
@@ -148,15 +122,11 @@ const RealDScreen = (props: RealDScreenProps) => {
 
         if (response.data.status === 1) {
           const getcounty = response?.data?.info
-          console.log("./....k././", getcounty);
           const setarr = []
           getcounty.map((item) => {
-            console.log("kjfskdkfjbk", item.callingCodes[0])
             setarr.push(item.callingCodes[0])
             setgetCountry(setarr);
           })
-          console.log("hgdvchg,..//setarr", setarr)
-          // Utility.showSuccessToast(response?.data?.message);
         } else {
           Utility.showDangerToast(response.data.msg);
         }
@@ -174,7 +144,7 @@ const RealDScreen = (props: RealDScreenProps) => {
         data={getCountry}
         renderItem={({ item, }) => (
           <TouchableOpacity
-            onPress={() => refRBSheet.current.close(setroll(item), console.log("s.,,.//", item))}
+            onPress={() => refRBSheet.current.close(setroll(item))}
             // onPress={() => refRBSheet.current.close(setState(item.state_name), stateId = item.id)}
 
             style={{ width: Responsive.widthPx(100), height: Responsive.heightPx(15), justifyContent: 'center', alignItems: 'center' }}
@@ -233,14 +203,10 @@ const RealDScreen = (props: RealDScreenProps) => {
     ApiServices("post", payload1, ApiEndPoints.updateprofile)
       .then((response: any) => {
         Loader.isLoading(false);
-        console.log("djbkbv/...", payload1);
-        console.log("BReaalId,..//.//..", response);
         if (response.data.status === 1) {
-          console.log("silkmd.///", response);
           Utility.showSuccessToast("User details updated");
           navigation.navigate(Screen.CareToShareScreen);
         } else {
-          console.log("sjhdvjhsd..", response.data.message);
           Utility.showDangerToast(response.data.message);
         }
       })
@@ -308,7 +274,7 @@ const RealDScreen = (props: RealDScreenProps) => {
                 onChangeText={(Username: any) => {
                   setUsername(Username);
                 }}
-                placeHolder= {t('Enter your Username')}
+                placeHolder={t('Enter your Username')}
               // placeHolder={t('Enter your e-mail')}
               />
             </View>
@@ -316,7 +282,7 @@ const RealDScreen = (props: RealDScreenProps) => {
               <Text
                 style={{ color: "#000", marginTop: Responsive.heightPx(2) }}
               >
-                 {t('First name*')}
+                {t('First name*')}
               </Text>
             </View>
             <View style={styles.emailtextstyle}>
@@ -327,7 +293,7 @@ const RealDScreen = (props: RealDScreenProps) => {
                 onChangeText={(Firstname: any) => {
                   setFirstname(Firstname);
                 }}
-                
+
                 placeHolder={t('Enter your First name')}
               // placeHolder={t('Enter your e-mail')}
               />

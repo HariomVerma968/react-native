@@ -1,45 +1,26 @@
 import { useRef, useEffect } from "react";
 import {
-  Text,
-  StyleSheet,
-  View,
-  Image,
-  ImageBackground,
-  TouchableOpacity,
-  Platform,
-  Alert,
-  FlatList,
+  Text, View,
+  Image, TouchableOpacity
 } from "react-native";
-import React, { Component, useState } from "react";
-import RBSheet from "react-native-raw-bottom-sheet";
+import React, { useState } from "react";
 import {
   Responsive,
-  Images,
-  Color,
-  Screen,
-  Loader,
-  Fonts,
-  Utility,
-  Storage,
+  Images, Screen,
+  Loader, Utility
 } from "../../Helper";
-import Axios from "axios";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
 import styles from "./AliseScreenstyle";
 import {
-  AppHeader,
   AppScrollview,
   AppContainer,
   AppTextInput,
-  AppButton,
+  AppButton
 } from "../../Component";
 import { ApiEndPoints, ApiServices } from "../../NetworkCall";
-import DeviceInfo from "react-native-device-info";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { launchImageLibrary } from "react-native-image-picker";
 import ImagePicker from "react-native-image-crop-picker";
 import BottomSheet from "react-native-bottomsheet";
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 interface AliseScreenProps {
   navigation?: any;
@@ -65,12 +46,6 @@ const AliseScreen = (props: AliseScreenProps) => {
   const langType = useSelector(state => state.data.getemailId);
   const ChoseLangType = langType.ChoseLang
 
-  useEffect(() => {
-    console.log("loc_g...////", ChoseLangType, profileType)
-
-  }, []);
-  console.log("zdgcvj,../roll", roll)
-
   const onPickImage = () => {
     BottomSheet.showBottomSheetWithOptions(
       {
@@ -87,8 +62,6 @@ const AliseScreen = (props: AliseScreenProps) => {
             // showCropFrame: true
           }).then((imagepath) => {
             setIMagespath(imagepath);
-            console.log("show path kjbkbk>>>", imagepath.path);
-            // myAsyncPDFFunction(image.path)
           });
         } else if (value === 1) {
           launchImageLibrary(
@@ -99,7 +72,6 @@ const AliseScreen = (props: AliseScreenProps) => {
             (response) => {
               if (response) {
                 const imagedata = response.assets[0];
-                console.log("imagedata.....", imagedata.uri);
                 setIMagespath({
                   path: imagedata.uri,
                   ...imagedata,
@@ -144,14 +116,10 @@ const AliseScreen = (props: AliseScreenProps) => {
     ApiServices("post", payload1, ApiEndPoints.updateprofile)
       .then((response: any) => {
         Loader.isLoading(false);
-        console.log("djbkbv/...", payload1);
-        console.log("BReaalId,..//.//..", response);
         if (response.data.status === 1) {
-          console.log("silkmd.///", response);
           Utility.showSuccessToast("User details updated");
           navigation.navigate(Screen.Signinscreen);
         } else {
-          console.log("sjhdvjhsd..", response.data.message);
           Utility.showDangerToast(response.data.message);
         }
       })

@@ -66,7 +66,6 @@ const CareToShareScreen = (props) => {
 
   const ChosesLang = useSelector(state => state.data.getemailId);
   const langue = ChosesLang.ChoseLang
-  console.log("k....//.../", langue)
 
   const IdType = useSelector(state => state.data.getemailId);
   const profileType = IdType.aliasId
@@ -170,14 +169,10 @@ const CareToShareScreen = (props) => {
     ApiServices("post", payload1, ApiEndPoints.updateprofile)
       .then((response: any) => {
         Loader.isLoading(false);
-        console.log("djbkbv/...", payload1);
-        console.log("BReaalId,..//.//..", response);
         if (response.data.status === 1) {
-          console.log("silkmd.///", response);
           Utility.showSuccessToast("User details updated");
           navigation.navigate(Screen.Signinscreen);
         } else {
-          console.log("sjhdvjhsd..", response.data.message);
           Utility.showDangerToast(response.data.message);
         }
       })

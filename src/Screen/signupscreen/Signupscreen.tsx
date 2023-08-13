@@ -1,50 +1,26 @@
-import { useRef } from "react";
 import {
-  Text,
-  StyleSheet,
-  View,
-  Image,
-  ImageBackground,
-  TouchableOpacity,
-  Platform,
-  Alert,
-  FlatList,
-  Dimensions
+  Text, View,
+  Image, TouchableOpacity, Dimensions
 } from "react-native";
-import React, { Component, useState } from "react";
-import { SvgIcon } from "../../Component/SvgIcons";
+import React, { useState } from "react";
 import {
   Responsive,
   Images,
   Color,
   Screen,
-  Loader,
-  Fonts,
-  Utility,
-  Storage,
+  Loader, Utility,
+  Storage
 } from "../../Helper";
-import { bindActionCreators } from "redux";
-import { connect } from "react-redux";
 import styles from "./Signupscreenstyle";
 import {
-  AppHeader,
   AppScrollview,
   AppContainer,
   AppTextInput,
-  AppButton,
+  AppButton
 } from "../../Component";
 // import DeviceInfo from 'react-native-device-info';
-import RBSheet from "react-native-raw-bottom-sheet";
-import axios from "axios";
 // import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { ApiEndPoints, ApiServices } from "../../NetworkCall";
-import {
-  GoogleSignin,
-  GoogleSigninButton,
-  statusCodes,
-} from "@react-native-google-signin/google-signin";
-import DeviceInfo, { getDeviceToken } from "react-native-device-info";
-import messaging from '@react-native-firebase/messaging';
 import { useEffect } from "react";
 import { useTranslation } from 'react-i18next';
 import { useSelector, useDispatch } from 'react-redux';
@@ -153,6 +129,7 @@ const Signupscreen = (props: HomeScreenProps) => {
       Utility.showDangerToast(" Confirm password does not match");
       return;
     }
+
     const payload1 = {
       primary_email: email,
       os_platform: platform,
@@ -167,16 +144,13 @@ const Signupscreen = (props: HomeScreenProps) => {
     ApiServices("post", payload1, ApiEndPoints.register)
       .then((response: any) => {
         Loader.isLoading(false);
-        console.log("UserEmail,......", payload1);
         if (response.data.status === 1) {
-          console.log("sign4.dkfjbkj...", response.data.info);
           navigation.navigate(Screen.SetUpYourProfilesScreen);
-          const user_tokan = response.data.info;
+          const user_tokan = response?.data?.jwt_token;
           loc_global.userData = user_tokan;
           Utility.showSuccessToast("Register Successfully");
           Storage.setUserData(user_tokan);
         } else {
-          console.log("sigkdfb//", response.data.msg);
           Utility.showDangerToast(response.data.msg);
         }
       })
