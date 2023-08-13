@@ -37,47 +37,55 @@ import {
   AppButton,
 } from "../../Component";
 import { ApiEndPoints, ApiServices } from "../../NetworkCall";
-import DeviceInfo from "react-native-device-info";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import { launchImageLibrary } from "react-native-image-picker";
-import ImagePicker from "react-native-image-crop-picker";
-import BottomSheet from "react-native-bottomsheet";
-import { ScrollView } from "react-native-gesture-handler";
-
+import { useSelector, useDispatch } from 'react-redux';
+import { getemailId } from '../../Store/actions/commonActions';
+import { useTranslation } from 'react-i18next';
 interface CareToShareScreenProps {
   navigation?: any;
   text?: any;
 }
-const data = [
-  { label: 'Item 1', value: '1' },
-  { label: 'Item 2', value: '2' },
-  { label: 'Item 3', value: '3' },
-  { label: 'Item 4', value: '4' },
-  { label: 'Item 5', value: '5' },
-  { label: 'Item 6', value: '6' },
-  { label: 'Item 7', value: '7' },
-  { label: 'Item 8', value: '8' },
-];
+
 const loc_global: any = global;
-const CareToShareScreen = (props: CareToShareScreenProps) => {
+const CareToShareScreen = (props) => {
+  const { t, i18n } = useTranslation();
   const { navigation } = props;
   const refRBSheet: any = useRef();
   const [language, setLanguage] = React.useState('')
   const [imagepath, setIMagespath] = React.useState(null);
-  const [roll, setroll] = React.useState("Country");
+  const [roll, setroll] = React.useState("");
   const [mobilenum, setmobilenum] = useState("");
   const [LastName, setLastName] = useState("");
   const [Firstname, setFirstname] = useState("");
-  const [Username, setUsername] = useState("");
+  const [workdo, setworkdo] = useState("");
   const [deviceid, setdeviceid] = useState("");
   const [eyshow, setEyeshow] = useState(true);
   const [value, setValue] = useState(null);
-    const [isFocus, setIsFocus] = useState(false);
-  const [statelist, setstatelist] = React.useState([
+  const [isFocus, setIsFocus] = useState(false);
+  const [month, setmonth] = useState("02");
+  const [days, setDays] = useState([]);
 
-    { name: 'teacher' },
-    { name: 'student' },
-  ]);
+  const ChosesLang = useSelector(state => state.data.getemailId);
+  const langue = ChosesLang.ChoseLang
+  console.log("k....//.../", langue)
+
+  const IdType = useSelector(state => state.data.getemailId);
+  const profileType = IdType.aliasId
+
+  useEffect(() => {
+    const daysInMonth = new Date(selectedYear, selectedMonth + 1, 0).getDate();
+    const daysArray = Array.from({ length: daysInMonth }, (_, index) => index + 1);
+    setDays(daysArray);
+  }, [selectedYear, selectedMonth]);
+
+
+  const [modalVisible, setModalVisible] = useState(false);
+  const [year, setYear] = useState("1999");
+  const currentYear = new Date().getFullYear();
+  const years = Array.from({ length: 50 }, (_, index) => currentYear - index);
+
+  const toggleModal = () => {
+    setModalVisible(!modalVisible);
+  };
 
 
   const [selectedYear, setSelectedYear] = useState(new Date().getFullYear());
@@ -86,210 +94,117 @@ const CareToShareScreen = (props: CareToShareScreenProps) => {
     setSelectedYear(year);
   };
 
-  // useEffect(() => {
-  //   getDeviceID();
-  //   deviceToken();
-  // });
-
-  
-  const [modalVisible, setModalVisible] = useState(false);
-  const currentYear = new Date().getFullYear();
-  const years = Array.from({ length: 50 }, (_, index) => currentYear - index);
-
-  const toggleModal = () => {
-    setModalVisible(!modalVisible);
-  };
-const renderItem=({item})=>{
-  return(
-    <TouchableOpacity onPress={()=>{setModalVisible(false)}}>
-    <View style={{height:Responsive.heightPx(2)}}>
-      <Text style={{color:"black"}}>{item}</Text>
-    </View>
+  const renderItem = ({ item }) => (
+    <TouchableOpacity
+      style={styles.modalstyle}
+      onPress={() => { handleYearSelect(item), setYear(item), setModalVisible(false) }}>
+      <Text style={styles.modaltext}>{item}</Text>
     </TouchableOpacity>
-  )
-}
+  );
 
-  const YearPicker = ({ selectedYear, onSelect }) => {
 
-    const handleYearSelect = (year) => {
-      onSelect(year);
-      toggleModal();
+  const months = [
+    '01', '02', '03', '04', '05', '06',
+    '07', '08', '09', '10', '11', '12'
+  ];
+
+  const [monthmodalVisible, setmonthmodalVisible] = useState(false);
+  const [selectedMonth, setSelectedMonth] = useState(null);
+  const monthtoggleModal = () => {
+    setmonthmodalVisible(!monthmodalVisible);
+  };
+
+  const handleMonthSelect = (month) => {
+    setSelectedMonth(month);
+    monthtoggleModal();
+  };
+
+  const monthsrenderItem = ({ item }) => (
+    <TouchableOpacity
+      style={styles.modalstyle}
+      onPress={() => { handleMonthSelect(item), setmonth(item), setmonthmodalVisible(false) }}>
+      <Text style={styles.modaltext}>{item}</Text>
+    </TouchableOpacity>
+  );
+
+
+  const [DatemodalVisible, setDatemodalVisible] = useState(false);
+  const [selectedDate, setselectedDate] = useState(null);
+  const [pickDate, setpickDate] = useState("15");
+  const datetoggleModal = () => {
+    setDatemodalVisible(!DatemodalVisible);
+  };
+
+  const handleDaySelect = (day: any) => {
+    setselectedDate(new Date(selectedYear, selectedMonth, day));
+    datetoggleModal();
+  };
+
+  const daterenderItem = ({ item }) => (
+    <TouchableOpacity
+      style={styles.modalstyle}
+      onPress={() => { handleDaySelect(item), setDatemodalVisible(false), setpickDate(item) }}>
+      <Text style={styles.modaltext}>{item}</Text>
+    </TouchableOpacity>
+  );
+
+  // This  is CreToSahare Post API's
+  const CreToSahare = () => {
+    if (!workdo) {
+      Utility.showDangerToast("Please enter your work_place");
+      return false;
+    }
+    if (!roll) {
+      return Utility.showDangerToast("Please enter your roll");
+    }
+
+
+    const payload1 = {
+      profile: profileType,
+      work_place: workdo,
+      work_role: roll,
+      dob: year + month + pickDate,
+      language: langue,
     };
 
+    ApiServices("post", payload1, ApiEndPoints.updateprofile)
+      .then((response: any) => {
+        Loader.isLoading(false);
+        console.log("djbkbv/...", payload1);
+        console.log("BReaalId,..//.//..", response);
+        if (response.data.status === 1) {
+          console.log("silkmd.///", response);
+          Utility.showSuccessToast("User details updated");
+          navigation.navigate(Screen.Signinscreen);
+        } else {
+          console.log("sjhdvjhsd..", response.data.message);
+          Utility.showDangerToast(response.data.message);
+        }
+      })
+      .finally(() => {
+        Loader.isLoading(false);
+      });
 
-    return (
-      <View>
-        <TouchableOpacity onPress={() => toggleModal()}>
-          <Text style={{ color: 'red' }}>{selectedYear}</Text>
-        </TouchableOpacity>
-
-        <Modal
-          // style={{ width: Responsive.widthPx(100),justifyContent: 'center', alignItems: 'center' }}
-          visible={modalVisible} transparent animationType="slide">
-          <View style={{
-            // alignItems: "center",
-            // justifyContent: "center",
-            alignSelf: 'center',
-            backgroundColor: "red",
-            width: Responsive.widthPx(90),
-            borderRadius: Responsive.widthPx(5),
-            height: Responsive.heightPx(50),
-            marginTop: Responsive.heightPx(20)
-          }}>
-            {/* {years.map((year) => (
-              <ScrollView
-                contentContainerStyle={{
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  // marginVertical: Responsive.heightPx(2),
-                  width: Responsive.widthPx(80),
-                  // height: Responsive.heightPx(50)
-                }}
-              >
-                <View>
-                  <TouchableOpacity
-                    style={{ backgroundColor: 'blue', width: Responsive.widthPx(30) }}
-                    key={year} onPress={() => handleYearSelect(year)}>
-                    <Text style={{ color: '#000', }}>{year}</Text>
-                  </TouchableOpacity>
-                </View>
-              </ScrollView>
-            ))} */}
-            <View style={{}}>
-              <FlatList 
-              data={years}
-              renderItem={renderItem}
-              />
-            </View>
-            <TouchableOpacity onPress={() => toggleModal()}>
-              <Text style={{ color: '#fff' }}>Close</Text>
-            </TouchableOpacity>
-          </View>
-        </Modal>
-      </View>
-    );
-  }
-
-  const YourOwnComponent = () =>
-    <View style={{ backgroundColor: "#fff" }}>
-      <FlatList
-        data={statelist}
-        renderItem={({ item, }) => (
-          <TouchableOpacity
-            onPress={() => refRBSheet.current.close(setroll(item.name), console.log("sdjcvh", item.name))}
-            // onPress={() => refRBSheet.current.close(setState(item.state_name), stateId = item.id)}
-
-            style={{ width: Responsive.widthPx(100), height: Responsive.heightPx(15), justifyContent: 'center', alignItems: 'center' }}
-          >
-            <View style={{
-              backgroundColor: Color.themcolor,
-              width: Responsive.widthPx(90),
-              justifyContent: 'center',
-              alignItems: 'center',
-              height: Responsive.heightPx(10),
-              borderWidth: 2,
-              borderColor: Color.themcolor,
-              marginTop: Responsive.heightPx(3),
-              borderRadius: Responsive.widthPx(3)
-            }}>
-              <Text style={{ color: '#fff', fontSize: 20, marginHorizontal: 12, marginVertical: 5 }}>{item.name}</Text>
-            </View>
-          </TouchableOpacity>
-        )}
-        numColumns={1}
-      />
-    </View>;
-
-
-  // This  is Registration Post API's
-  const RegisterPress = () => {
-    let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
-
-    if (!Username) {
-      Utility.showDangerToast("Please enter your Username");
-      return false;
-    }
-
-    if (!Firstname) {
-      Utility.showDangerToast("Please enter your First name");
-      return false;
-    }
-    if (!LastName) {
-      Utility.showDangerToast("Please enter your Last name");
-      return false;
-    }
-
-    if (!mobilenum) {
-      return Utility.showDangerToast("Please enter your Number");
-    }
-    // navigation.navigate(Screen.HomeScreen)
-
-    // const RegisterAPI = () => {
-    // const payload1 = {
-    //   username: email,
-    //   password: password,
-    //   device_type: "android",
-    //   // role: 'student',
-    //   device_id: "",
-    //   notification_id: "",
-    //   latitude: "",
-    //   longitude: "",
-    // };
-
-    // ApiServices("post", payload1, ApiEndPoints.login)
-    //   .then((response: any) => {
-    //     Loader.isLoading(false);
-    //     console.log("BO/,.///", payload1);
-    //     if (response.data.code == 200) {
-    //       console.log("sigrollere..", response.data.result.role);
-    //       const user_tokan = response?.data?.result;
-    //       console.log("user_tokan..", user_tokan);
-    //       loc_global.userData = user_tokan;
-    //       Utility.showSuccessToast("Login Successfully");
-    //       Storage.setUserData(user_tokan);
-    //       navigation.navigate(Screen.HomeScreen);
-    //       // const roll = response.data.result.role
-    //       // setrooll(roll)
-    //       // AsyncStorage.setItem("key", roll)
-    //       storeData(response.data.result.role);
-    //     } else {
-    //       console.log("signd....djbisb", response.data.msg);
-    //       Utility.showDangerToast(response.data.msg);
-    //     }
-    //   })
-    //   .finally(() => {
-    //     Loader.isLoading(false);
-    //   });
-
-    // }
   };
 
-
-  const deviceToken = () => {
-    let devivetokean = DeviceInfo.getDeviceToken();
-    console.log("djnfkvb...", devivetokean);
-  };
-
-  const getDeviceID = async () => {
-    let uniqueId = DeviceInfo.getDeviceToken();
-    console.log("sdbvkbsd....", uniqueId);
-  };
 
   return (
     <AppContainer>
       <AppScrollview>
         <View style={styles.headerstyle}>
-          <View style={{ width: Responsive.widthPx(20), }}>
-            <Image
-              resizeMode="contain" source={Images.Backicon} />
-          </View>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <View style={{ width: Responsive.widthPx(20), }}>
+              <Image
+                resizeMode="contain" source={Images.Backicon} />
+            </View>
+          </TouchableOpacity>
           <View style={{ width: Responsive.widthPx(50), alignItems: 'center' }}>
-            <Text style={styles.textstyle}>Care to share?</Text>
+            <Text style={styles.textstyle}>{t('Care to share?')}</Text>
           </View>
         </View>
 
         <View style={styles.discrptionview}>
-          <Text style={{ color: "#000" }}>Care to share some more about yourself? This information will be available in your Real ID profile. It will be shared with other users should you choose to show them your Real ID.</Text>
+          <Text style={{ color: "#000" }}>{t('Care to sharedescription')}</Text>
         </View>
         <View style={styles.main_container}>
           <View style={styles.text_Inpute_conatainer}>
@@ -297,18 +212,18 @@ const renderItem=({item})=>{
               <Text
                 style={{ color: "#000", marginTop: Responsive.heightPx(2) }}
               >
-                Where do you work?
+                {t('Where do you work?')}
               </Text>
             </View>
             <View style={styles.emailtextstyle}>
               <AppTextInput
-                lableImage={true}
-                value={Username}
+                caremob={true}
+                value={workdo}
                 // keyboardType={"email-address"}
-                onChangeText={(Username: any) => {
-                  setUsername(Username);
+                onChangeText={(workdo: any) => {
+                  setworkdo(workdo);
                 }}
-                placeHolder={'Stark Industries'}
+                placeHolder={t('work place')}
               // placeHolder={t('Enter your e-mail')}
               />
             </View>
@@ -316,92 +231,138 @@ const renderItem=({item})=>{
               <Text
                 style={{ color: "#000", marginTop: Responsive.heightPx(2) }}
               >
-                What’s your title/role?
+                {t('What’s your title/role?')}
               </Text>
             </View>
             <View style={styles.emailtextstyle}>
               <AppTextInput
-                lableImage={true}
-                value={Firstname}
+                rollIcon={true}
+                value={roll}
                 // keyboardType={"email-address"}
-                onChangeText={(Firstname: any) => {
-                  setFirstname(Firstname);
+                onChangeText={(roll: any) => {
+                  setroll(roll);
                 }}
-                placeHolder={'Chief Executive Officer'}
+
+                placeHolder={t('Enter Your role')}
               // placeHolder={t('Enter your e-mail')}
               />
             </View>
-
-            <View style={styles.countryview}>
-              <TouchableOpacity
-                onPress={() => { refRBSheet.current.open() }}
+            <View style={styles.emailstyle}>
+              <Text
+                style={{ color: "#000", marginTop: Responsive.heightPx(2) }}
               >
-                <View>
-                  <View style={{ width: Responsive.widthPx(15), }}>
-                    <Text
-                      style={{ color: "#000", marginTop: Responsive.heightPx(2) }}
-                    >
-                      Country
-                    </Text>
-                  </View>
-                  <View style={styles.countrystyleview}>
-                    <Image
-                      source={Images.langIcon} />
-                    <Text style={{ color: "#000" }}>{roll}</Text>
-                    <Image source={Images.downarrow} />
+                {t('When’s your birthday?')}
+              </Text>
+            </View>
+            <View style={styles.yearmontview}>
+              <View style={{}}>
+                <Text style={styles.textyear}>{t('Year')}</Text>
+                <View style={styles.pickselectview}>
+                  <TouchableOpacity
+                    style={styles.pickertouch}
+                    onPress={() => toggleModal()}>
+                    <Text style={styles.textyear}>{year}</Text>
+                  </TouchableOpacity>
+                  <Image
+                    source={Images.downarrow}
+                  />
+                </View>
+              </View>
+
+              <View style={{}}>
+                <Text style={styles.textyear}>{t('Month')}</Text>
+                <View style={styles.pickselectview}>
+                  <TouchableOpacity
+                    style={styles.pickertouch}
+                    onPress={() => monthtoggleModal()}>
+                    <Text style={styles.textyear}>{month}</Text>
+                  </TouchableOpacity>
+                  <Image
+                    source={Images.downarrow}
+                  />
+                </View>
+              </View>
+              <View style={{}}>
+                <Text style={styles.textyear}>{t('Day')}</Text>
+                <View style={styles.pickselectview}>
+                  <TouchableOpacity
+                    style={styles.pickertouch}
+                    onPress={() => datetoggleModal()}>
+                    <Text style={styles.textyear}>{pickDate}</Text>
+                  </TouchableOpacity>
+                  <Image
+                    source={Images.downarrow}
+                  />
+                </View>
+              </View>
+            </View>
+            <Modal
+              visible={modalVisible}
+              transparent={true}
+              animationType="slide"
+              onRequestClose={() => toggleModal()}>
+              <View style={styles.modalconatiner}>
+                <View style={styles.modalconatier2}>
+                  <View>
+                    <FlatList
+                      data={years}
+                      renderItem={renderItem}
+                      keyExtractor={(item) => item.toString()}
+                    />
                   </View>
                 </View>
-              </TouchableOpacity>
-              <RBSheet
-                ref={refRBSheet}
-                height={300}
-                openDuration={250}
-                customStyles={{
-                  container: {
-                    justifyContent: "center",
-                    alignItems: "center",
-                    backgroundColor: Color.black,
-                    borderTopLeftRadius: 10
-                  }
-                }}
-              >
-                <YourOwnComponent />
-              </RBSheet>
-            </View>
+              </View>
+            </Modal>
+
+
+
+            <Modal
+              visible={monthmodalVisible}
+              transparent
+              animationType="slide"
+              onRequestClose={() => monthtoggleModal()}>
+              <View style={styles.modalconatiner}>
+                <View style={styles.modalconatier2}>
+                  <FlatList
+                    data={months}
+                    renderItem={monthsrenderItem}
+                    keyExtractor={(item, index) => index.toString()}
+                  />
+                </View>
+              </View>
+            </Modal>
+
+
+
+
+
+            <Modal
+              visible={DatemodalVisible}
+              transparent
+              animationType="slide"
+              onRequestClose={() => datetoggleModal()}>
+              <View style={styles.modalconatiner}>
+                <View style={styles.modalconatier2}>
+                  <FlatList
+                    data={days}
+                    renderItem={daterenderItem}
+                    keyExtractor={(item) => item.toString()}
+                  />
+                </View>
+              </View>
+            </Modal>
+
+
+
+            {/* ///////////////////////////////////////////////////////////////////////////////// */}
+
+
           </View>
-
-          {/* <TouchableOpacity onPress={()=>toggleModal()}>
-              <Text style={{ color: 'red' }}>{selectedYear}</Text>
-            </TouchableOpacity> */}
-
-          <YearPicker selectedYear={selectedYear} onSelect={handleYearSelect} />
-          <Dropdown
-          style={[styles.dropdown, isFocus && { borderColor: 'blue' }]}
-          placeholderStyle={styles.placeholderStyle}
-          selectedTextStyle={styles.selectedTextStyle}
-          inputSearchStyle={styles.inputSearchStyle}
-          iconStyle={styles.iconStyle}
-          data={data}
-          // search
-          maxHeight={300}
-          labelField="label"
-          valueField="value"
-          placeholder={!isFocus ? 'Select item' : '...'}
-          searchPlaceholder="Search..."
-          value={value}
-          onFocus={() => setIsFocus(true)}
-          onBlur={() => setIsFocus(false)}
-          onChange={item => {
-            setValue(item.value);
-            setIsFocus(false);
-          }}
-          
-        />
           <View style={{ marginTop: Responsive.heightPx(5) }}>
             <AppButton
-              label="Save and continue"
+              label={t('Save and continue')}
               isImage={true}
-              onPress={() => RegisterPress()}
+              onPress={() => CreToSahare()}
             />
           </View>
 
@@ -410,23 +371,7 @@ const renderItem=({item})=>{
               style={styles.logoview}
               resizeMode="contain" source={Images.RukkorLogo} />
           </View>
-
         </View>
-        {/* <Modal 
-        style={{height:Responsive.heightPx(50)}}
-        visible={modalVisible} transparent animationType="slide">
-          <View style={{ justifyContent: 'center', alignItems: 'center', backgroundColor: '#ffff' }}>
-            {years.map((year) => (
-              <TouchableOpacity key={year} onPress={() => handleYearSelect(year)}>
-                <Text style={{ color: 'red' }}>{year}</Text>
-              </TouchableOpacity>
-            ))}
-            <TouchableOpacity onPress={() => toggleModal()}>
-              <Text style={{ color: 'red' }}>Close</Text>
-            </TouchableOpacity>
-          </View>
-        </Modal> */}
-
       </AppScrollview>
     </AppContainer>
   );

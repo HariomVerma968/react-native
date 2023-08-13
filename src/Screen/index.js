@@ -6,6 +6,7 @@ import ProfileSettingsscreen from "./ProfileSettingsscreen/ProfileSettingsscreen
 import SetUpYourProfilesScreen from "./SetUpYourProfiles/SetUpYourProfilesScreen";
 import RealDScreen from "./RealDScreen/RealDScreen";
 import CareToShareScreen from "./CareToShare/CareToShareScreen";
+import AliseScreen from "./AliseScreen/AliseScreen";
 export {
   HomeScreen,
   Signupscreen,
@@ -15,4 +16,5 @@ export {
   SetUpYourProfilesScreen,
   RealDScreen,
   CareToShareScreen,
+  AliseScreen
 };

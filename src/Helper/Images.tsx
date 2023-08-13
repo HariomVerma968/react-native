@@ -109,6 +109,7 @@ const Images = {
   workIcon: require("../Assets/Images/workIcon.png"),
   rollIcon: require("../Assets/Images/rollIcon.png"),
   AtIcon: require("../Assets/Images/AtIcon.png"),
+  caremob: require("../Assets/Images/caremob.png"),
 };
 
 export default Images;

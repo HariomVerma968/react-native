@@ -26,7 +26,8 @@ const Screen = {
   RazorPayScreen: "RazorPayScreen",
   SetUpYourProfilesScreen: "SetUpYourProfilesScreen",
   RealDScreen: "RealDScreen",
-  CareToShareScreen: "CareToShareScreen"
+  CareToShareScreen: "CareToShareScreen",
+  AliseScreen:"AliseScreen"
 }
 
 export default Screen

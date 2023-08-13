@@ -1,6 +1,17 @@
 const initialState = {
   value: null,
-  getemailId: null
+  getemailId: {
+    email: "",
+    platform: "",
+    androidVersion: "",
+    deviceName: "",
+    devicesType: "",
+    getdevicesId: "",
+    DevicesToken: "",
+    ChoseLang: "",
+    realId: "",
+    aliasId: ""
+  }
 };
 
 

@@ -20,9 +20,10 @@ const styles = StyleSheet.create({
         width: Responsive.widthPx(100),
     },
     text_Inpute_conatainer: {
-        marginTop: Responsive.heightPx(10),
+        marginTop: Responsive.heightPx(5),
         alignItems: 'center',
         justifyContent: 'center',
+        // backgroundColor:'red'
     },
     emailstyle: {
         width: Responsive.widthPx(80),
@@ -86,7 +87,7 @@ const styles = StyleSheet.create({
     headerstyle: {
         padding: Responsive.heightPx(3),
         justifyContent: 'space-between',
-        // flexDirection: 'row',
+    //    backgroundColor:'red',
         alignItems: "center",
         width: Responsive.widthPx(100),
         // marginTop: Responsive.heightPx(5)
@@ -109,6 +110,13 @@ const styles = StyleSheet.create({
     ImageChildViewStyle: {
         height: Responsive.heightPx(8),
         width: Responsive.widthPx(10),
+        // backgroundColor: 'red',
+    },
+    crestetexxt: {
+        width: Responsive.widthPx(100),
+        height: Responsive.heightPx(5),
+        justifyContent: 'center',
+        alignItems: 'center',
         // backgroundColor: 'red',
     }
 });

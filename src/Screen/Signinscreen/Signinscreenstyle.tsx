@@ -127,6 +127,7 @@ const styles = StyleSheet.create({
   /////////////////////////////////////////////////////////
 
 
+
   LogoHadderview: {
     alignItems: 'center'
   },
@@ -145,7 +146,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: Responsive.font(4.5),
-
+    color: 'red'
   },
   createAccount: {
     color: '#47A4EA',
@@ -192,6 +193,65 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginTop: 10,
 
+  },
+
+
+
+  ///////////////////////////////////////
+
+
+
+  button: {
+    backgroundColor: '#6258e8',
+    padding: 10,
+    borderRadius: 3,
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
+  },
+  // text: {
+  //   marginBottom: 100,
+  //   fontSize: 18,
+  //   color: 'white',
+  // },
+  languagesList: {
+    height: '50%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+    backgroundColor: Color.themcolor,
+    marginTop: 20,
+    width: "90%",
+    alignSelf: 'center',
+    borderRadius: Responsive.widthPx(5),
+    elevation: 5
+  },
+
+  languageButton: {
+    padding: 10,
+    borderBottomColor: '#dddddd',
+    borderBottomWidth: 1,
+  },
+  lngName: {
+    fontSize: 16,
+    color: 'white',
+  },
+
+  modalconatiner: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.8)',
+    justifyContent: "center",
+    alignItems: 'center',
+  },
+  modalconatier2: {
+    alignSelf: 'center',
+    backgroundColor: Color.themcolor,
+    width: Responsive.widthPx(85),
+    borderRadius: Responsive.widthPx(5),
+    height: Responsive.widthPx(70),
+    justifyContent: "center",
+    alignItems: "center"
   }
 });
 

@@ -18,6 +18,7 @@ import {
   SetUpYourProfilesScreen,
   RealDScreen,
   CareToShareScreen,
+  AliseScreen,
 } from "../Screen";
 
 // import AppBottomTab from "./AppBottomTab";
@@ -63,19 +64,19 @@ export default function Routes(props: appScrollviewProps) {
   return (
     <NavigationContainer>
       <Stack.Navigator
+        // initialRouteName={Screen.SetUpYourProfilesScreen}
         initialRouteName={Screen.Signinscreen}
-
         // initialRouteName={Screen.LoginScreen}
         screenOptions={{ headerShown: false }}
       >
         <Stack.Screen name={Screen.HomeScreen} component={renderBottomTab} />
-
         <Stack.Screen name={Screen.Signupscreen} component={Signupscreen} />
-        <Stack.Screen name={Screen.Signinscreen} component={Signinscreen} initialParams={{ t, i18n }} />
+        <Stack.Screen name={Screen.Signinscreen} component={Signinscreen} />
         <Stack.Screen name={Screen.ProfileSettingsscreen} component={ProfileSettingsscreen} />
         <Stack.Screen name={Screen.SetUpYourProfilesScreen} component={SetUpYourProfilesScreen} />
         <Stack.Screen name={Screen.RealDScreen} component={RealDScreen} />
         <Stack.Screen name={Screen.CareToShareScreen} component={CareToShareScreen} />
+        <Stack.Screen name={Screen.AliseScreen} component={AliseScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

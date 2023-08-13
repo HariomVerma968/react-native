@@ -42,6 +42,7 @@ interface AppTextInputProps {
   mpobicon?: any;
   rollIcon?: any;
   AtIcon?: any;
+  caremob?: any;
   leftImage?: any;
 }
 
@@ -77,6 +78,7 @@ const AppTextInput = (props: AppTextInputProps) => {
     emailimg,
     rollIcon,
     AtIcon,
+    caremob,
     workIcon,
   } = props;
 
@@ -139,6 +141,15 @@ const AppTextInput = (props: AppTextInputProps) => {
             </View>
           ) : null}
           {AtIcon ? (
+            <View style={styles.lableImagestyle}>
+              <Image
+                style={styles.imagestyle}
+                source={Images.AtIcon}
+                resizeMode="contain"
+              />
+            </View>
+          ) : null}
+          {caremob ? (
             <View style={styles.lableImagestyle}>
               <Image
                 style={styles.imagestyle}

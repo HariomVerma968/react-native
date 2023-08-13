@@ -10,7 +10,8 @@ import {
   Alert,
   FlatList,
   Dimensions,
-  Button
+  Button,
+  Modal
 } from "react-native";
 import React, { Component, useState } from "react";
 import RBSheet from "react-native-raw-bottom-sheet";
@@ -40,16 +41,12 @@ import {
 import { ApiEndPoints, ApiServices } from "../../NetworkCall";
 import DeviceInfo from "react-native-device-info";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { useTranslation } from 'react-i18next';
 import RadioForm from 'react-native-simple-radio-button';
+import i18next, { languageResources } from '../../../services/i18next';
+import { useTranslation } from 'react-i18next';
+import languagesList from '../../../services/languagesList.json';
 
-
-
-
-import { setData } from '../../Store/actions/commonActions';
-import { setData2 } from '../../Store/actions/commonActions';
 import { getemailId } from '../../Store/actions/commonActions';
-
 
 interface SigninscreenProps {
   navigation?: any;
@@ -60,33 +57,40 @@ interface SigninscreenProps {
 const { width, height } = Dimensions.get('window');
 const loc_global: any = global;
 const Signinscreen = (props: SigninscreenProps) => {
-
-
-
-
-
   const { navigation, route } = props;
 
-  const { t, i18n } = route?.params;
+  const [visible, setVisible] = useState(false);
+  const { t } = useTranslation();
+
+  const changeLng = lng => {
+    i18next.changeLanguage(lng);
+    setVisible(false);
+  };
+
 
   const refRBSheet: any = useRef();
-  const [language, setLanguage] = React.useState('')
+  const [ChoseLang, setChoseLang] = React.useState('English')
   const [getdevicesId, setgetdevicesId] = useState("");
   const [DevicesToken, setDevicesToken] = useState("");
   const [platform, setPlatform] = useState("");
   const [androidVersion, setandroidVersion] = useState("");
   const [deviceName, setdeviceName] = useState("");
   const [devicesType, setdevicesType] = useState("");
-  const [LanguageJson, setLanguageJson] = React.useState([
-    { label: 'English', value: 'English' },
-    { label: 'Hindi', value: 'Hindi' },
-    { label: 'Urdu', value: 'Urdu' },
-  ])
-  const [roll, setroll] = React.useState("English");
+
   const [password, setpassword] = useState("");
   const [email, setemail] = useState("");
   const [deviceid, setdeviceid] = useState("");
   const [eyshow, setEyeshow] = useState(true);
+
+  const dispatch = useDispatch();
+  const getEmailData = () => {
+    dispatch(getemailId({ email, platform, androidVersion, deviceName, devicesType, getdevicesId, DevicesToken, ChoseLang }));
+  };
+
+  global.a = email
+  console.log("hdbvjbs", global.a)
+  const UserEmail = useSelector(state => state.data.getemailId);
+  console.log("jbcjhbajhcb", UserEmail)
   const passwordfunction = () => {
     if (eyshow == true) {
       setEyeshow(false);
@@ -94,6 +98,8 @@ const Signinscreen = (props: SigninscreenProps) => {
       setEyeshow(true);
     }
   };
+
+
   useEffect(() => {
     setemail(''),
       setpassword('')
@@ -143,31 +149,10 @@ const Signinscreen = (props: SigninscreenProps) => {
 
 
 
-  const dispatch = useDispatch();
-  const data = useSelector(state => state.data.value);
-  const data1 = useSelector(state => state.data.getemailId);
-
-
-  const updateData = () => {
-    dispatch(setData('New Value from Component A'));
-  };
-  const getEmailData = () => {
-    dispatch(getemailId(email));
-  };
-  const updateData2 = () => {
-    dispatch(setData2('Atul'));
-  };
 
 
 
 
-  // const changeLanguage = (value: any) => {
-  //   console.log("jdhvj./...", value)
-  //   i18n
-  //     .changeLanguage(value)
-  //     .then(() => setLanguage(value))
-  //     .catch(err => console.log(err))
-  // };
 
 
   const validate_email = (text) => {
@@ -184,7 +169,7 @@ const Signinscreen = (props: SigninscreenProps) => {
   };
 
   // This  is Registration Post API's
-  const RegisterPress = () => {
+  const LoginPress = () => {
     let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
 
     if (!email) {
@@ -211,10 +196,11 @@ const Signinscreen = (props: SigninscreenProps) => {
       type: devicesType,
       password: password,
       device_id: getdevicesId,
-      language: "english"
+      language: ChoseLang
 
     };
 
+    console.log("payload1.//......", payload1)
     ApiServices("post", payload1, ApiEndPoints.login)
       .then((response: any) => {
         Loader.isLoading(false);
@@ -223,7 +209,7 @@ const Signinscreen = (props: SigninscreenProps) => {
           console.log("user_tokan..", user_tokan)
           loc_global.userData = user_tokan;
           Utility.showSuccessToast("Login Successfully");
-          getEmailData()
+
           navigation.navigate(Screen.SetUpYourProfilesScreen);
         } else {
           Utility.showDangerToast(response.data.message);
@@ -247,22 +233,18 @@ const Signinscreen = (props: SigninscreenProps) => {
   return (
     <AppContainer>
       <View style={styles.headerstyle}>
-        <TouchableOpacity onPress={() => navigation.pop()}>
-          <Image resizeMode="contain" source={Images.RukkorLogo} />
-        </TouchableOpacity>
+        {/* <TouchableOpacity onPress={() => navigation.pop()}> */}
+        <Image resizeMode="contain" source={Images.RukkorLogo} />
+        {/* </TouchableOpacity> */}
       </View>
       <AppScrollview>
         <View style={styles.main_container}>
           <View style={styles.text_Inpute_conatainer}>
-            <Text style={{ color: 'red' }}>Data in Component A: {data1}</Text>
-            <Button title="getEmailData" onPress={getEmailData} />
-            <Button title="Update Data" onPress={updateData2} />
             <View style={styles.emailstyle}>
               <Text
                 style={{ color: "#000", marginTop: Responsive.heightPx(1) }}
               >
-                {/* {t('Let_us_know_how_you_satisfied_with_us')} */}
-                E-mail
+                {t('Email')}
               </Text>
             </View>
 
@@ -278,16 +260,15 @@ const Signinscreen = (props: SigninscreenProps) => {
               />
             </View>
             <View style={styles.Passwordstyle}>
-              <Text
-                style={{ color: "#000", marginTop: Responsive.heightPx(1) }}
-              >
-                Password
+              <Text style={{ color: "#000", marginTop: Responsive.heightPx(1) }}>
+                {t('Password')}
               </Text>
               <TouchableOpacity>
                 <Text
                   style={{ color: Color.themcolor, marginTop: Responsive.heightPx(1) }}
                 >
-                  Forgot password?
+                  {t('Forgot password?')}
+
                 </Text>
               </TouchableOpacity>
             </View>
@@ -304,7 +285,9 @@ const Signinscreen = (props: SigninscreenProps) => {
                 // containerStyle={styles.passstyle}
                 secureTextEntry={eyshow}
                 isShowIcon={true}
-                placeHolder="Enter your password"
+
+                placeHolder={t('Enter your password')}
+
               />
             </View>
           </View>
@@ -313,96 +296,58 @@ const Signinscreen = (props: SigninscreenProps) => {
             <Text
               style={{ color: "#000", marginTop: Responsive.heightPx(1) }}
             >
-              language
+              {t('language')}
+
             </Text>
           </View>
-          <TouchableOpacity
-            onPress={() => {
-              refRBSheet.current.open();
-            }}
-          >
+
+          <Modal
+            transparent={true}
+            visible={visible} onRequestClose={() => setVisible(false)}>
+            {/* <View style={styles.languagesList}> */}
+            <View style={styles.modalconatiner}>
+              <View style={styles.modalconatier2}>
+                <View>
+                  <FlatList
+                    data={Object.keys(languageResources)}
+                    renderItem={({ item }) => (
+                      <TouchableOpacity
+                        style={styles.languageButton}
+                        onPress={() => { changeLng(item), setChoseLang(languagesList[item].nativeName) }}>
+                        <Text style={styles.lngName}>
+                          {languagesList[item].nativeName}
+                        </Text>
+                      </TouchableOpacity>
+                    )}
+                  />
+                </View>
+              </View>
+            </View>
+          </Modal>
+          <TouchableOpacity onPress={() => setVisible(true)}>
             <View style={styles.langstyle}>
               <Image
                 style={styles.langlogostyle}
                 resizeMode="contain" source={Images.langIcon} />
-              <Text style={styles.textlanstyle}>{roll}</Text>
+              <Text style={styles.textlanstyle}>{ChoseLang}</Text>
             </View>
           </TouchableOpacity>
-          {/* <Text  style={{ color: 'red' }}>
 
-          {t('Hey Yo Im at home')}
-          </Text> */}
-          {/* <TouchableOpacity onPress={() => i18n.changeLanguage('de')}>
-            <Text style={{ color: 'red' }}>
-              chnage lange
-            </Text>
-          </TouchableOpacity> */}
-          {/* <RBSheet
-            ref={refRBSheet}
-            height={300}
-            openDuration={250}
-            customStyles={{
-              container: {
-                justifyContent: "center",
-                alignItems: "center",
-                backgroundColor: Color.black,
-                borderTopLeftRadius: 10,
-              },
-            }}
-          >
-            <YourOwnComponent />
-          </RBSheet> */}
 
-          <RBSheet
-            ref={refRBSheet}
-            closeOnDragDown={true}
-            height={Responsive.heightPx(50)}
-            closeOnPressMask={true}
-            animationType='fade'
-
-            customStyles={{
-              draggableIcon: {
-                backgroundColor: "#47A4EA"
-              },
-              container: {
-                borderTopLeftRadius: 20,
-                borderTopRightRadius: 20,
-              }
-            }}>
-
-            {/* <Text style={{ color: 'red' }}>{language ? language : "Please selct language"}</Text> */}
-            <View style={{ marginHorizontal: 10, padding: 10 }}>
-              <RadioForm
-                radio_props={LanguageJson}
-                initial={0}
-                buttonSize={12}
-                labelStyle={{
-                  fontSize: Responsive.font(5),
-                  marginBottom: 15,
-                  fontFamily: Fonts.Metropolis_Regular, top: 2
-                }}
-                selectedLabelColor={'#47A4EA'}
-                onPress={(value: any) => {
-
-                  refRBSheet.current.close()
-                }}
-              />
-            </View>
-
-          </RBSheet>
           <View style={styles.btnstyle}>
             <AppButton
-              label="Log in"
+              label={t('Log in')}
               // containerStyle={styles.bookmow}
-              onPress={() => RegisterPress()}
+              onPress={() => { LoginPress(), getEmailData() }}
             />
           </View>
           <View style={styles.btnstyle1}>
             <AppButton
               labelStyle={styles.textcolor}
-              label="Create new account"
+              label={t('Create new account')}
+
               containerStyle={styles.signupbtn}
-              onPress={() => navigation.navigate(Screen.Signupscreen)}
+              onPress={() => { navigation.navigate(Screen.Signupscreen), getEmailData() }}
             />
           </View>
         </View>

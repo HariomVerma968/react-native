@@ -18,8 +18,11 @@ import {
 import styles from "./SetUpYourProfilesScreenstyle";
 import { AppScrollview, AppContainer, AppButton } from "../../Component";
 import { ApiEndPoints, ApiServices } from "../../NetworkCall";
-import Axios from "axios";
-import { useSelector } from 'react-redux';
+import i18next, { languageResources } from '../../../services/i18next';
+import { useTranslation } from 'react-i18next';
+import languagesList from '../../../services/languagesList.json';
+import { useSelector, useDispatch } from 'react-redux';
+import { getemailId } from '../../Store/actions/commonActions';
 interface SetUpYourProfilesScreenProps {
   dummyname: any;
   navigation?: any;
@@ -31,15 +34,19 @@ const imgpath = ApiEndPoints.imagepath;
 const loc_global: any = global;
 
 const SetUpYourProfilesScreen = (props: SetUpYourProfilesScreenProps) => {
-  const data = useSelector(state => state.data.getemailId);
-
   const { navigation, route } = props;
   const [realId, setrealId] = React.useState(false)
-  const [alias, setAlias] = React.useState(false)
-  const [btn, setbtn] = React.useState(0)
-  const [wishlisthart, setwishlist] = React.useState(false)
+  const [aliasId, setaliasId] = React.useState("")
   const [selectedView, setSelectedView] = useState(null);
-  // const inputText = useSelector(state => state.textInput);
+  const dispatch = useDispatch();
+  const getEmailData = () => {
+    dispatch(getemailId({ aliasId, realId }));
+  };
+
+  const UserEmail = useSelector(state => state.data.getemailId);
+  const Email_Id = UserEmail.email
+console.log("svdj,./..",Email_Id)
+
   // ########### API 1 ##############################################
   React.useEffect(() => {
     const backScreen = navigation.addListener("focus", () => {
@@ -47,7 +54,7 @@ const SetUpYourProfilesScreen = (props: SetUpYourProfilesScreenProps) => {
     return backScreen;
   }, []);
 
-
+  const { t, i18n } = useTranslation();
 
 
   return (
@@ -55,29 +62,28 @@ const SetUpYourProfilesScreen = (props: SetUpYourProfilesScreenProps) => {
       <AppScrollview>
         <View style={styles.container}>
           <View style={styles.setupview}>
-            <Text style={styles.setuptextstyle}>Set up your profiles</Text>
-            <Text style={{ color: "#000", marginTop: Responsive.heightPx(1) }}>{data}</Text>
+            <Text style={styles.setuptextstyle}>{t('Set up your profiles')}</Text>
           </View>
 
           <View style={styles.descriptionbiew}>
-            <Text style={styles.textstyle}>A Rukkor account is associated with two profiles, one which we call Real ID and one which is your Alias. You choose in which settings you wish to expose your true identity and in which you wish to use an alias.</Text>
+            <Text style={styles.textstyle}>{t('Rukkor description')}</Text>
           </View>
           <TouchableOpacity
-            onPress={() => setSelectedView(1)}
+            onPress={() => { setSelectedView(1), setrealId("real_id") }}
           >
             < View style={[
               styles.reslidview,
               selectedView === 1 ? styles.reslidview1 : null,
             ]}>
               <View>
-                <Text style={styles.setuptextstyle}>Real ID</Text>
+                <Text style={styles.setuptextstyle}>{t('Real ID')}</Text>
                 <Image
                   style={styles.imgstyle}
                   source={Images.realidphoto}
                 />
               </View>
               <View style={styles.realidstyle}>
-                <Text style={styles.textstyle}>With Real ID you can disclose your personal details like name, phone number, birthday, e-mail and more. Use your Real ID when interacting with trusted family, friends and colleagues.</Text>
+                <Text style={styles.textstyle}>{t('Real diescrpion')}</Text>
                 {/* <Text style={{color:'red'}}>Text from Screen A: {inputText}</Text> */}
               </View>
             </View>
@@ -86,47 +92,29 @@ const SetUpYourProfilesScreen = (props: SetUpYourProfilesScreenProps) => {
 
           <TouchableOpacity
 
-            onPress={() => setSelectedView(2)}
+            onPress={() => { setSelectedView(2), setaliasId("alias") }}
           >
             <View style={[
               styles.reslidview,
               selectedView === 2 ? styles.reslidview1 : null,
             ]}>
               <View>
-                <Text style={styles.setuptextstyle}>Alias</Text>
+                <Text style={styles.setuptextstyle}>{t('Alias')}</Text>
                 <Image
                   style={styles.imgstyle}
                   source={Images.Alis}
                 />
               </View>
               <View style={styles.realidstyle}>
-                <Text style={styles.textstyle}>Using your Alias you can choose an additional @alias with which you can join Spaces and interact with other users in communities where you’re not comfortable sharing your personal details.</Text>
+                <Text style={styles.textstyle}>{t('Alias Descrption')}</Text>
               </View>
             </View>
-            {/* :
-            <View style={styles.reslidview1}>
-            <View>
-              <Text style={styles.setuptextstyle}>Alias</Text>
-              <Image
-                style={styles.imgstyle}
-                source={Images.Alis}
-              />
-            </View>
-            <View style={styles.realidstyle}>
-              <Text style={styles.textstyle}>Using your Alias you can choose an additional @alias with which you can join Spaces and interact with other users in communities where you’re not comfortable sharing your personal details.</Text>
-            </View>
-          </View>
-          // null
-            } */}
-
           </TouchableOpacity>
-
-
           <View style={{ marginTop: Responsive.heightPx(5) }}>
             <AppButton
-              label="Next"
+              label={t('Next')}
               isImage={true}
-              onPress={() => navigation.navigate(Screen.RealDScreen)}
+              onPress={() => { selectedView === 1 ? navigation.navigate(Screen.RealDScreen) : navigation.navigate(Screen.AliseScreen), getEmailData() }}
             />
           </View>
 
@@ -143,36 +131,3 @@ const SetUpYourProfilesScreen = (props: SetUpYourProfilesScreenProps) => {
 };
 
 export default SetUpYourProfilesScreen;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React from 'react';
-// import { View, Text } from 'react-native';
-// import { useSelector } from 'react-redux';
-
-
-// const SetUpYourProfilesScreen = () => {
-//   const inputText = useSelector(state => state.textInput);
-
-//   return (
-//     <View>
-//       <Text style={{color:'red'}}>Text from Screen A: {inputText}</Text>
-//     </View>
-//   );
-// };
-
-// export default SetUpYourProfilesScreen;

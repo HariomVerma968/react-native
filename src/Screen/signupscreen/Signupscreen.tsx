@@ -47,124 +47,47 @@ import DeviceInfo, { getDeviceToken } from "react-native-device-info";
 import messaging from '@react-native-firebase/messaging';
 import { useEffect } from "react";
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
-// import selectInputValue from "../../Store/reduserslice"
-
+import { useSelector, useDispatch } from 'react-redux';
+import { getemailId } from '../../Store/actions/commonActions';
 const { width, height } = Dimensions.get('window');
 interface HomeScreenProps {
   navigation?: any;
   text?: any;
 }
+
 const loc_global: any = global;
-var countyId = "";
-var stateId = "";
-var cityId = "";
-
 const Signupscreen = (props: HomeScreenProps) => {
-  // const counter = useSelector((state: any) => state.input);
-  // const inputValues = useSelector(counter);
-  // const inputValues = useSelector(selectInputValue);
-// console.log(",,,..././.",inputValues)
   const { navigation } = props;
-
   const { t, i18n } = useTranslation();
+  const getalldata = useSelector(state => state.data.getemailId);
+  const device_Name = getalldata.deviceName
+  const platform = getalldata.platform
+  const android_Version = getalldata.androidVersion
+  const devices_Type = getalldata.devicesType
+  const Devices_Token = getalldata.DevicesToken
+  const getdevices_Id = getalldata.getdevicesId
 
-  const refRBSheet: any = useRef();
-  const refRBSheet1: any = useRef();
-  const countryRBSheet: any = useRef();
-  const [roll, setroll] = React.useState("");
-  const [city, setcity] = React.useState("");
-  const [cityid, setcityid] = React.useState("");
-  const [country, setcountry] = React.useState("");
-  const [countryid, setcountryid] = React.useState("");
-  const [stateid, setstateid] = React.useState("");
-  const [countrylist, setcountrylist] = React.useState([]);
-
-  const [citylist, setcitylist] = React.useState([]);
-  const [text, setText] = React.useState("");
-  const [firstname, setfirstname] = useState("");
-  const [lastname, setlastname] = useState("");
   const [password, setpassword] = useState("");
-  const [mobilenumber, setmobilenumber] = useState("");
   const [email, setemail] = useState("");
-  const [devicetype, setdevicetype] = useState("");
   const [confirmPass, setconfirmPass] = useState("");
   const [eyshow, setEyeshow] = useState(true);
   const [eyshow1, setEyeshow1] = useState(true);
-  const [getdevicesId, setgetdevicesId] = useState("");
-  const [DevicesToken, setDevicesToken] = useState("");
-  const [platform, setPlatform] = useState("");
-  const [androidVersion, setandroidVersion] = useState("");
-  const [deviceName, setdeviceName] = useState("");
-  const [devicesType, setdevicesType] = useState("");
+
+  const dispatch = useDispatch();
+  const getEmailData = () => {
+    dispatch(getemailId(email));
+  };
+
+
+  const UserEmail = useSelector(state => state.data.getemailId);
+  const data = UserEmail.email
+
   useEffect(() => {
     setemail(''),
       setpassword(''),
       setconfirmPass('')
-    const requestPermission = async () => {
-      try {
-        await messaging().requestPermission();
-        const token = await messaging().getToken();
-        setDevicesToken(token)
-        console.log('Device Token (APNs):', token);
-      } catch (error) {
-        console.log('Permission denied or error:', error);
-      }
-    };
-
-    requestPermission();
-
-    console.log("fkjgbnkfn.///", platform, androidVersion, deviceName)
-    getDeviceID();
-    deviceToken();
-    if (Platform.OS === 'ios') {
-      // Code for iOS
-      setPlatform('ios')
-      console.log('Running on iOS');
-    } else if (Platform.OS === 'android') {
-      // Code for Android
-      setPlatform('android')
-      console.log('Running on Android');
-    } else {
-      // Code for other platforms (if applicable)
-      console.log('Running on a platform other than iOS or Android');
-    }
-    setgetdevicesId(DeviceInfo.getUniqueIdSync())
-    console.log("D...///", DeviceInfo.getDeviceToken())
-    setdeviceName(DeviceInfo.getDeviceNameSync())
-    setandroidVersion(DeviceInfo.getSystemVersion())
-
-    const isTablet = Math.min(width, height) >= 600;
-
-    if (isTablet) {
-      setdevicesType("Tablet")
-      console.log('Device type: Tablet');
-    } else {
-      setdevicesType("Phone")
-      console.log('Device type: Phone');
-    }
-
 
   }, []);
-
-
-
-
-
-
-
-  const deviceToken = () => {
-    let devivetokean = DeviceInfo.getDeviceNameSync();
-    console.log("djn././..", devivetokean);
-  };
-
-  const getDeviceID = async () => {
-    let uniqueId = DeviceInfo.getDeviceToken();
-    console.log("sdbvkbsd....", uniqueId);
-    // AsyncStorage.setItem('deviceId', uniqueId);
-    // setDeviceId(uniqueId)
-  };
-
 
   const passwordfunction = () => {
     if (eyshow == true) {
@@ -182,7 +105,6 @@ const Signupscreen = (props: HomeScreenProps) => {
   };
 
   const isPasswordValid = (password) => {
-    // Define your password validation criteria using regular expressions
     const passwordRegex =
       /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
     return passwordRegex.test(password);
@@ -221,7 +143,6 @@ const Signupscreen = (props: HomeScreenProps) => {
     if (!isPasswordValid(password)) {
       Utility.showDangerToast(
         "Pick a strong password, requirements are at least one of each, minimum 10 characters, Uppercase letter ( A-Z ),Lowercase letter ( a-z ), Number ( 0-9 ),Symbol ( !@#$%^&* )"
-        // "Password must contain at least one number, one special character, one lowercase, and one uppercase letter"
       );
       return;
     }
@@ -232,32 +153,30 @@ const Signupscreen = (props: HomeScreenProps) => {
       Utility.showDangerToast(" Confirm password does not match");
       return;
     }
-    navigation.navigate(Screen.SetUpYourProfilesScreen);
-    console.log("inside the api", roll);
     const payload1 = {
       primary_email: email,
       os_platform: platform,
-      os_platform_version: androidVersion,
+      os_platform_version: android_Version,
       user_agent: 'user1',
-      device_name: deviceName,
-      type: devicesType,
+      device_name: device_Name,
+      type: devices_Type,
       password: password,
-      device_id: getdevicesId,
-      device_token: DevicesToken
+      device_id: getdevices_Id,
+      device_token: Devices_Token
     };
     ApiServices("post", payload1, ApiEndPoints.register)
       .then((response: any) => {
         Loader.isLoading(false);
-        console.log("B,.///", payload1);
+        console.log("UserEmail,......", payload1);
         if (response.data.status === 1) {
-          console.log("sign4.dkfjbkj", response.data.info);
+          console.log("sign4.dkfjbkj...", response.data.info);
           navigation.navigate(Screen.SetUpYourProfilesScreen);
           const user_tokan = response.data.info;
           loc_global.userData = user_tokan;
           Utility.showSuccessToast("Register Successfully");
           Storage.setUserData(user_tokan);
         } else {
-          console.log("sigkdfbkv....", response.data.msg);
+          console.log("sigkdfb//", response.data.msg);
           Utility.showDangerToast(response.data.msg);
         }
       })
@@ -275,15 +194,10 @@ const Signupscreen = (props: HomeScreenProps) => {
       <AppScrollview>
         <View style={styles.main_container}>
           <View
-            style={{
-              width: Responsive.widthPx(100),
-              height: Responsive.heightPx(5),
-              justifyContent: 'center',
-              alignItems: 'center'
-            }}
+            style={styles.crestetexxt}
           >
             <Text style={{ color: Color.black, fontSize: 20, }}>
-              Create new account
+              {t('Create new account')}
             </Text>
           </View>
 
@@ -292,8 +206,7 @@ const Signupscreen = (props: HomeScreenProps) => {
               <Text
                 style={{ color: "#000", marginTop: Responsive.heightPx(1) }}
               >
-                {/* {t('Let_us_know_how_you_satisfied_with_us')} */}
-                E-mail*
+                {t('Email')}
               </Text>
             </View>
             <View >
@@ -304,14 +217,14 @@ const Signupscreen = (props: HomeScreenProps) => {
                   setemail(email);
                 }}
                 emailimg={true}
-                placeHolder={t('Please enter your email')}
+                placeHolder={t('Enter your e-mail')}
               />
             </View>
             <View style={styles.emailstyle}>
               <Text
                 style={{ color: "#000", marginTop: Responsive.heightPx(1) }}
               >
-                Password *
+                {t('Password')}
               </Text>
             </View>
             <View>
@@ -327,14 +240,14 @@ const Signupscreen = (props: HomeScreenProps) => {
                 }}
                 secureTextEntry={eyshow}
                 isShowIcon={true}
-                placeHolder="Password"
+                placeHolder={t('Password')}
               />
             </View>
             <View style={styles.emailstyle}>
               <Text
                 style={{ color: "#000", marginTop: Responsive.heightPx(1) }}
               >
-                Confirm Password *
+                {t('Confirm Password *')}
               </Text>
             </View>
             <View  >
@@ -349,23 +262,22 @@ const Signupscreen = (props: HomeScreenProps) => {
                 }}
                 secureTextEntry={eyshow1}
                 isShowIcon={true}
-                placeHolder="Confirm Password"
+                placeHolder={t('Confirm Password *')}
               />
             </View>
           </View>
 
 
-          <View style={{ marginTop: Responsive.heightPx(5) }}>
+          <View style={{ marginTop: Responsive.heightPx(15) }}>
             <AppButton
-              label="Next"
+              label={t('Next')}
               isImage={true}
-              // onPress={() => RegisterPress()}
-              onPress={() => navigation.navigate(Screen.SetUpYourProfilesScreen)}
+              onPress={() => { RegisterPress(), getEmailData() }}
             />
           </View>
           <TouchableOpacity
             onPress={() => navigation.navigate(Screen.Signinscreen)}
-            style={{ marginTop: Responsive.heightPx(5) }}>
+            style={{ marginTop: Responsive.heightPx(3) }}>
             <View
               style={{
                 width: Responsive.widthPx(100),
@@ -375,7 +287,7 @@ const Signupscreen = (props: HomeScreenProps) => {
               }}
             >
               <Text style={{ color: Color.themcolor, fontSize: 20, }}>
-                Cancel account creation
+                {t('Cancel account creation')}
               </Text>
             </View>
           </TouchableOpacity>

@@ -40,7 +40,7 @@ import { launchImageLibrary } from "react-native-image-picker";
 import ImagePicker from "react-native-image-crop-picker";
 import BottomSheet from "react-native-bottomsheet";
 import { useSelector, useDispatch } from 'react-redux';
-
+import { useTranslation } from 'react-i18next';
 interface RealDScreenProps {
   navigation?: any;
   text?: any;
@@ -48,8 +48,14 @@ interface RealDScreenProps {
 
 const loc_global: any = global;
 const RealDScreen = (props: RealDScreenProps) => {
+  const UserEmail = useSelector(state => state.data.getemailId);
+  const Email_Id = UserEmail.email
+  const { t, i18n } = useTranslation();
+  const IdType = useSelector(state => state.data.getemailId);
+  const profileType = IdType.realId
 
-
+  const langType = useSelector(state => state.data.getemailId);
+  const ChoseLangType = langType.ChoseLang
 
 
   const { navigation } = props;
@@ -73,7 +79,7 @@ const RealDScreen = (props: RealDScreenProps) => {
     console.log("loc_global?.userData?...///", loc_global?.userData)
     getCountryApi()
   }, []);
-console.log("zdgcvj,../roll",roll)
+  console.log("zdgcvj,../roll", roll)
 
   const onPickImage = () => {
     BottomSheet.showBottomSheetWithOptions(
@@ -132,7 +138,7 @@ console.log("zdgcvj,../roll",roll)
 
 
 
- 
+
 
 
   const getCountryApi = () => {
@@ -143,14 +149,14 @@ console.log("zdgcvj,../roll",roll)
         if (response.data.status === 1) {
           const getcounty = response?.data?.info
           console.log("./....k././", getcounty);
-          const  setarr=[]
+          const setarr = []
           getcounty.map((item) => {
             console.log("kjfskdkfjbk", item.callingCodes[0])
             setarr.push(item.callingCodes[0])
             setgetCountry(setarr);
           })
-          console.log("hgdvchg,..//setarr",setarr)
-          Utility.showSuccessToast(response?.data?.message);
+          console.log("hgdvchg,..//setarr", setarr)
+          // Utility.showSuccessToast(response?.data?.message);
         } else {
           Utility.showDangerToast(response.data.msg);
         }
@@ -163,80 +169,37 @@ console.log("zdgcvj,../roll",roll)
 
 
   const YourOwnComponent = () =>
-  <View style={{ backgroundColor: "#fff" }}>
-    <FlatList
-      data={getCountry}
-      renderItem={({ item, }) => (
-        <TouchableOpacity
-          onPress={() => refRBSheet.current.close(setroll(item), console.log("s.,,.//",item))}
-          // onPress={() => refRBSheet.current.close(setState(item.state_name), stateId = item.id)}
+    <View style={{ backgroundColor: "#fff" }}>
+      <FlatList
+        data={getCountry}
+        renderItem={({ item, }) => (
+          <TouchableOpacity
+            onPress={() => refRBSheet.current.close(setroll(item), console.log("s.,,.//", item))}
+            // onPress={() => refRBSheet.current.close(setState(item.state_name), stateId = item.id)}
 
-          style={{ width: Responsive.widthPx(100), height: Responsive.heightPx(15), justifyContent: 'center', alignItems: 'center' }}
-        >
-          <View style={{
-            backgroundColor: Color.themcolor,
-            width: Responsive.widthPx(90),
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: Responsive.heightPx(10),
-            borderWidth: 2,
-            borderColor: Color.themcolor,
-            marginTop: Responsive.heightPx(3),
-            borderRadius: Responsive.widthPx(3)
-          }}>
-            <Text style={{ color: '#fff', fontSize: 20, marginHorizontal: 12, marginVertical: 5 }}>{item}</Text>
-          </View>
-        </TouchableOpacity>
-      )}
-      numColumns={1}
-    />
-  </View>;
-
-
+            style={{ width: Responsive.widthPx(100), height: Responsive.heightPx(15), justifyContent: 'center', alignItems: 'center' }}
+          >
+            <View style={{
+              backgroundColor: Color.themcolor,
+              width: Responsive.widthPx(90),
+              justifyContent: 'center',
+              alignItems: 'center',
+              height: Responsive.heightPx(10),
+              borderWidth: 2,
+              borderColor: Color.themcolor,
+              marginTop: Responsive.heightPx(3),
+              borderRadius: Responsive.widthPx(3)
+            }}>
+              <Text style={{ color: '#fff', fontSize: 20, marginHorizontal: 12, marginVertical: 5 }}>{item}</Text>
+            </View>
+          </TouchableOpacity>
+        )}
+        numColumns={1}
+      />
+    </View>;
 
 
-
-
-
-
-
-  // const getCountryApi = () => {
-  //   Loader.isLoading(true);
-  //   Axios({
-  //     method: "GET",
-  //     url: ApiEndPoints.get_country,
-  //     headers: {
-  //       "Cache-Control": "no-cache, no-store, must-revalidate",
-  //       Pragma: "no-cache",
-  //       Expires: "0",
-  //       Authorization: `Bearer ${loc_global?.userData}`,
-  //     },
-  //   })
-  //     .then((response: any) => {
-  //       console.log("./..././.cou.///",response);
-  //       if (response.data.status === 1) {
-  //         console.log("./..undarResponmse..//..",response);
-  //         setgetCountry(response?.data?.info);
-  //         Utility.showSuccessToast(response?.data?.message);
-  //       } else {
-  //         console.log("./..xmfbnkvb",response);
-  //         Utility.showDangerToast(response?.data?.message);
-  //       }
-  //     }).catch((error: any) => console.log("kjsdbvkb",error))
-  //     .finally(() => {
-  //       console.log("kxbjfkvbdfkv..")
-  //       Loader.isLoading(false);
-  //     });
-  // };
-
-
-
-
-
-
-
-
-  // This  is Registration Post API's
+  // This  is RealIdPress Post API's
   const RealIdPress = () => {
     if (!Username) {
       Utility.showDangerToast("Please enter your Username");
@@ -259,24 +222,11 @@ console.log("zdgcvj,../roll",roll)
 
     const payload1 = {
       username: Username,
-      // alias: 'mahajan',
-      //alias_picture:alies_pic_abc105
-      //user_picture:user_picture
-      // alias_name: 'laves',
       first_name: Firstname,
       last_name: LastName,
-      //phone_country:+91
-      //phone:9574198852
       mobile_country: roll,
-      //mobile:9915642879
-      //primary_email:abc12345678@yopmail.com
-      //status:online
-      //organization:mm
-      profile: 'real_id',
-      // work_place: 'Dignizant Tech',
-      // work_role: 'Backend dev',
-      // dob: '208588',
-      language: 'english',
+      profile: profileType,
+      language: ChoseLangType,
 
     };
 
@@ -306,7 +256,7 @@ console.log("zdgcvj,../roll",roll)
       <AppScrollview>
         <View style={styles.headerstyle}>
           <View style={{ marginTop: Responsive.heightPx(8) }}>
-            <Text style={styles.textstyle}>Real ID</Text>
+            <Text style={styles.textstyle}>{t('Real ID')}</Text>
           </View>
           <View style={styles.profileview}>
             {imagepath ?
@@ -335,30 +285,30 @@ console.log("zdgcvj,../roll",roll)
           <View style={styles.text_Inpute_conatainer}>
             <View style={styles.emailstyle}>
 
-              <Text style={{ color: "#000", marginTop: Responsive.heightPx(1) }}>E-mail</Text>
+              <Text style={{ color: "#000", marginTop: Responsive.heightPx(1) }}>{t('E-mail')}</Text>
             </View>
             <View style={styles.langstyle}>
               <Image
                 style={styles.langlogostyle}
                 resizeMode="contain" source={Images.email} />
-              <Text style={styles.textlanstyle}>tony@stark-industries.com</Text>
+              <Text style={styles.textlanstyle}>{Email_Id}</Text>
             </View>
             <View style={styles.emailstyle}>
               <Text
                 style={{ color: "#000", marginTop: Responsive.heightPx(2) }}
               >
-                Username*
+                {t('Username*')}
               </Text>
             </View>
             <View style={styles.emailtextstyle}>
               <AppTextInput
-                lableImage={true}
+                AtIcon={true}
                 value={Username}
                 // keyboardType={"email-address"}
                 onChangeText={(Username: any) => {
                   setUsername(Username);
                 }}
-                placeHolder={'Enter your Username'}
+                placeHolder= {t('Enter your Username')}
               // placeHolder={t('Enter your e-mail')}
               />
             </View>
@@ -366,7 +316,7 @@ console.log("zdgcvj,../roll",roll)
               <Text
                 style={{ color: "#000", marginTop: Responsive.heightPx(2) }}
               >
-                First name*
+                 {t('First name*')}
               </Text>
             </View>
             <View style={styles.emailtextstyle}>
@@ -377,7 +327,8 @@ console.log("zdgcvj,../roll",roll)
                 onChangeText={(Firstname: any) => {
                   setFirstname(Firstname);
                 }}
-                placeHolder={'Enter your First name'}
+                
+                placeHolder={t('Enter your First name')}
               // placeHolder={t('Enter your e-mail')}
               />
             </View>
@@ -386,7 +337,7 @@ console.log("zdgcvj,../roll",roll)
               <Text
                 style={{ color: "#000", marginTop: Responsive.heightPx(2) }}
               >
-                Last name*
+                {t('Last name*')}
               </Text>
             </View>
             <View style={styles.emailtextstyle}>
@@ -397,7 +348,7 @@ console.log("zdgcvj,../roll",roll)
                 onChangeText={(LastName: any) => {
                   setLastName(LastName);
                 }}
-                placeHolder={'Enter your Last name'}
+                placeHolder={t('Enter your Last name')}
               // placeHolder={t('Enter your e-mail')}
               />
             </View>
@@ -410,7 +361,7 @@ console.log("zdgcvj,../roll",roll)
                     <Text
                       style={{ color: "#000", marginTop: Responsive.heightPx(2) }}
                     >
-                      Country
+                      {t('Country')}
                     </Text>
                   </View>
                   <View style={styles.countrystyleview}>
@@ -442,12 +393,12 @@ console.log("zdgcvj,../roll",roll)
                   <Text
                     style={{ color: "#000", marginTop: Responsive.heightPx(2) }}
                   >
-                    Mobile*
+                    {t('Mobile*')}
                   </Text>
                 </View>
                 <View style={styles.mobview}>
                   <AppTextInput
-                  maxLength={10}
+                    maxLength={10}
                     mpobicon={true}
                     value={mobilenum}
                     keyboardType='numeric'
@@ -459,24 +410,20 @@ console.log("zdgcvj,../roll",roll)
                   />
                 </View>
               </View>
-
             </View>
           </View>
           <View style={{ marginTop: Responsive.heightPx(5) }}>
             <AppButton
-              label="Save and continue"
+              label={t('Save and continue')}
               isImage={true}
-              // onPress={() => navigation.navigate(Screen.CareToShareScreen)}
               onPress={() => RealIdPress()}
             />
           </View>
-
           <View style={styles.footerstyle}>
             <Image
               style={styles.logoview}
               resizeMode="contain" source={Images.RukkorLogo} />
           </View>
-
         </View>
       </AppScrollview>
     </AppContainer>

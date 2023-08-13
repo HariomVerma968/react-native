@@ -130,23 +130,17 @@ import { Provider } from "react-redux";
 import RootComponent from "./src/Router/RootComponent";
 import store from "./src/Store/store";
 import SplashScreen from "react-native-splash-screen";
-import i18n from './src/I18n/i18n'
-import {useTranslation} from 'react-i18next';
 // import socketServcies from "./src/Helper/socketServcies";
 export default function App() {
   React.useEffect(() => {
     SplashScreen.hide();
   });
-  const {t, i18n} = useTranslation();
-  const initI18n = i18n;
-  // useEffect(() => {
-  //   socketServcies.initializeSocket();
-  // }, []);
+
 
   return (
     <Provider store={store}>
       <AppLoader ref={(e) => Loader.setLoader(e)} />
-      <RootComponent screenProps={{t, i18n}} />
+      <RootComponent />
     </Provider>
   );
 }

@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
     ),
   },
   countryview: {
-    width: Responsive.widthPx(80),
+    // width: Responsive.widthPx(27),
     flexDirection: 'row',
     // backgroundColor: 'red',
     alignItems: 'center',
@@ -136,8 +136,8 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start'
   },
   countrystyleview: {
-    width: Responsive.widthPx(24),
-    height: Responsive.widthPx(13),
+    width: Responsive.widthPx(20),
+    height: Responsive.widthPx(10),
     borderRadius: 5,
     alignItems: "center",
     justifyContent: "space-around",
@@ -238,8 +238,108 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingHorizontal: 8,
     width: Responsive.widthPx(60),
+  },
+  doenimg: {
+    marginRight: 10
+  },
+  dropdownpicker: {
+    flexDirection: 'row',
+    alignSelf: 'center',
+    justifyContent: 'space-between',
+    width: Responsive.widthPx(80),
+  },
+
+  openButton: {
+    backgroundColor: 'blue',
+    padding: 10,
+    borderRadius: 5,
+    marginBottom: 20,
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
+  },
+  modalContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
+  modalContent: {
+    backgroundColor: 'white',
+    padding: 20,
+    borderRadius: 10,
+  },
+  monthButton: {
+    paddingVertical: 10,
+    alignItems: 'center',
+    borderWidth: 2,
+    borderRadius: 5,
+    borderColor: 'gray',
+    marginVertical: 5,
+  },
+  selectedMonthButton: {
+    borderColor: 'green',
+  },
+  monthText: {
+    fontSize: 16,
+    color: 'red'
+  },
+  pickselectview: {
+    width: Responsive.widthPx(25),
+    height: Responsive.heightPx(5),
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: Color.textinputcolor,
+    flexDirection: "row",
+    borderRadius: Responsive.widthPx(2),
+    marginTop: Responsive.heightPx(1)
+  },
+  textyear: {
+    color: '#000'
+  },
+  pickertouch: {
+    width: Responsive.widthPx(19),
+    height: Responsive.heightPx(5),
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  yearmontview: {
+    flexDirection: 'row',
+    justifyContent: "space-between",
+    width: Responsive.widthPx(80),
+    marginTop: Responsive.heightPx(1)
+  },
+  modalstyle: {
+    justifyContent: 'center',
+    alignItems: "center",
+    borderWidth: 1,
+    width: Responsive.widthPx(70),
+    marginTop: Responsive.heightPx(1),
+    alignSelf: "center",
+    marginBottom: Responsive.heightPx(2),
+    borderColor: "#fff",
+    borderRadius: Responsive.widthPx(5)
+  },
+  modaltext: {
+    color: '#fff',
+    padding: 10,
+    fontSize: 15
+  },
+  modalconatiner: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    justifyContent: "center",
+    alignItems: 'center',
+  },
+  modalconatier2: {
+    alignSelf: 'center',
+    backgroundColor: Color.themcolor,
+    width: Responsive.widthPx(85),
+    borderRadius: Responsive.widthPx(5),
+    height: Responsive.widthPx(95),
+    // marginTop: 100
   }
-  
 });
 
 export default styles;

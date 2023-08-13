@@ -57,17 +57,15 @@ const styles = StyleSheet.create({
   emailtextstyle: {
     // backgroundColor: "red",
   },
-
   textinputstyle: {
-    // backgroundColor: 'red',
     height: Responsive.heightPx(10),
   },
   headerstyle: {
     alignItems: "center",
     width: Responsive.widthPx(100),
-    // backgroundColor: 'red',
     height: Responsive.heightPx(15),
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginTop: Responsive.heightPx(1)
   },
   textstyle: {
     color: '#000',
